@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap");
+
+body {
+  margin: 0;
+  background-image: url(./bg.jpg);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+}
+
+/* da aggiungere nel header della pagina HTML il tag img con all'interno il logo  */
+#logoEpicode {
+  width: 10%;
+  display: block;
+  text-align: start;
+  padding: 3em 0 0 10em;
+}
+
+/* classe da associare ai titoli in quanto hanno font e dimensioni diverse */
+.titolo {
+  font-family: "Outfit", sans-serif;
+  line-height: 60px;
+}
+
+.buttonRisposte {
+  height: 4em;
+  width: 18em;
+  border-radius: 15px;
+}
