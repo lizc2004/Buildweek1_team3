@@ -3,27 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome page!</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Exam</title>
   </head>
   <body>
-    <header><h1>Welcome to your exam</h1></header>
     <main>
-      <h2>Instructions</h2>
-      <div>
-        <p>
-          We don't expect most engineers to know the answers to all of these
-          questions, so don't worry if you're unsure of a few of them.
-        </p>
-      </div>
-      <section>
-        <ul>
-          <li>Each question is timed and can only be answered once.</li>
-          <li>
-            Changing browser tab or opening other windows will invalidate the
-            question.
-          </li>
-          <li>This exam will take approx. 0-5 minutes.</li>
-        </ul>
+      <!-- PAGINA 1: Welcome -->
+      <section id="welcome">
+        <header>
+          <img id="#logoEpicode" />
+          <h1 class="titolo">Welcome to your exam</h1>
+        </header>
+
+        <h2 class="titoliSecondari">Instructions</h2>
+        <div>
+          <p>
+            We don't expect most engineers to know the answers to all of these
+            questions, so don't worry if you're unsure of a few of them.
+          </p>
+        </div>
+        <section>
+          <ul>
+            <li>Each question is timed and can only be answered once.</li>
+            <li>
+              Changing browser tab or opening other windows will invalidate the
+              question.
+            </li>
+            <li>This exam will take approx. 0-5 minutes.</li>
+          </ul>
+          <form>
+            <input type="checkbox" /> I promise to answer myself without help
+            from anyone
+          </form>
+          <div><button class="buttonWelcomeFeedback">PROCEED</button></div>
+        </section>
+      </section>
+      <!-- PAGINA 2: Question 1 -->
+      <section id="benchmark">
+        <h1 class="titolo">How can i create a checkbox in HTML?</h1>
+        <div class="answers">
+          <button class="option">&lt;input type="check"&gt;</button>
+          <button class="option correct">&lt;input type="checkbox"&gt;</button>
+          <button class="option">&lt;checkbox&gt;</button>
+          <button class="option">&lt;input type="button"&gt;</button>
+        </div>
+        <div>
+          <p class="question">QUESTION 1 / 10</p>
+        </div>
+        <div><span id="timer1">16</span> seconds remaining</div>
       </section>
     </main>
   </body>
