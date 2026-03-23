@@ -11,8 +11,6 @@ body {
   text-align: center;
 }
 
-/*  */
-
 /* da aggiungere nel header della pagina HTML il tag img con all'interno il logo  */
 #logoEpicode {
   width: 10%;
@@ -34,6 +32,7 @@ body {
   font-weight: bold;
 }
 
+/* button per la welcome e feedpack page */
 .buttonWelcomeFeedback {
   background-color: #00ffff;
   color: black;
@@ -44,6 +43,7 @@ body {
   box-shadow: 0px 0px 18px 2px #00ffff;
 }
 
+/* button per le risposte */
 .buttonRisposte {
   color: white;
   height: 61px;
@@ -53,6 +53,7 @@ body {
   backdrop-filter: blur(11px);
 }
 
+/* button risposta selezionata */
 .buttonSelezionato {
   color: white;
   height: 61px;
