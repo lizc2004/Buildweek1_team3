@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="benchmarkStyle.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+        <div id="domanda"><h1>Qual è la capitale della Francia?</h1></div>
+        <div id="risposte">
+            <button onclick="continua()">Madrid</button>
+            <button onclick="continua()">Berlino</button>
+            <button onclick="continua()">Parigi</button>
+            <button onclick="continua()">Otranto</button>
+        </div>
+        <div id="time-container">
+            <svg width="200" height="200" >
+            <circle cx="100" cy="100" r="90" class="primo-cerchio"></circle> 
+            <circle cx="100" cy="100" r="90" id="secondo-cerchio"></circle>
+            </svg>
+            <div id="display">60</div>
+        </div>
+        <button onclick="continua()">Avanti</button>
+        </div>
+    </main>
+    <footer><h2>Question <span>1</span>/10</h2></footer>
+    <script src="benchmarkScript.js"></script>
+  </body>
+</html>

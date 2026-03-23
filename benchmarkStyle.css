@@ -1,0 +1,37 @@
+#time-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+svg {
+    width: 200px;
+    height: 200px;
+    transform: rotate(-90deg);
+}
+
+circle {
+    fill: none;
+    stroke-width: 10px;
+}
+
+.primo-cerchio {
+    stroke: #ce0fbe;
+}
+
+#display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem;
+}
+
+#secondo-cerchio {
+    stroke: aqua;
+    stroke-dasharray: 565;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+    stroke-linecap: round;
+}
+
