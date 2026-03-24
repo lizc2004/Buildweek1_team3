@@ -2,13 +2,16 @@
 
 body {
   margin: 0;
-  background-image: url(./bg.jpg);
   min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+}
+
+main {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  font-family: "Inter", sans-serif;
-  text-align: center;
+  background-image: url(../img/bg.jpg);
 }
 
 /* da aggiungere nel header della pagina HTML il tag img con all'interno il logo  */
