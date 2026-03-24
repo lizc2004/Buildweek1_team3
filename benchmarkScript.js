@@ -7,7 +7,7 @@ const ring = ()=>{
     document.getElementById('second-circle').style.strokeDashoffset= animationCircle
 }
 
-
+const examResults= []
 
 const resetTimer = ()=>{                        //Cliccando il button con questa funzione il timer torna a 60
     seconds= 60
@@ -100,6 +100,7 @@ const showQuestion= ()=>{
         const button = document.createElement('button')
         button.innerHTML = answerP.text
         button.classList.add('btn')
+        button.dataset.isCorrect = answerP.correct                          //Salva il booleano nel bottone
         button.addEventListener('click', ()=>{
             nextBtn.style.display = 'block'
             const answers = answersContainer.querySelectorAll('.btn')
@@ -116,6 +117,11 @@ const startQuiz = () => {
 }
 
 nextBtn.addEventListener('click', ()=>{
+    const selectedButton= answersContainer.querySelector('.btn.selected')
+    if(selectedButton){
+        const result = selectedButton.dataset.isCorrect === 'true'
+        examResults.push(result)
+    }
              currentQuestionIndex++
          if (currentQuestionIndex < databaseQuestions.length){
              showQuestion()
@@ -137,6 +143,7 @@ const timer = ()=> {
                 ring()
             } else {
             clearInterval(countdown)
+            examResults.push(false)
             currentQuestionIndex++
             showQuestion()
             resetTimer()
@@ -146,3 +153,5 @@ const timer = ()=> {
 }
 
 timer()
+
+console.log(examResults)
