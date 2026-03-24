@@ -10,17 +10,17 @@
   <p>Da uno a 10 quanto raccomanderesti EPICODE a un amico o collega?</p>
 
   <div id="stelle">
-    <span class="stella" data-voto="1">&#9733;</span>
-    <span class="stella" data-voto="2">&#9733;</span>
-    <span class="stella" data-voto="3">&#9733;</span>
-    <span class="stella" data-voto="4">&#9733;</span>
-    <span class="stella" data-voto="5">&#9733;</span>
-    <span class="stella" data-voto="6">&#9733;</span>
-    <span class="stella" data-voto="7">&#9733;</span>
-    <span class="stella" data-voto="8">&#9733;</span>
-    <span class="stella" data-voto="9">&#9733;</span>
-    <span class="stella" data-voto="10">&#9733;</span>
-  </div>
+  <button class="stella" data-voto="1" type="button">&#9733;</button>
+  <button class="stella" data-voto="2" type="button">&#9733;</button>
+  <button class="stella" data-voto="3" type="button">&#9733;</button>
+  <button class="stella" data-voto="4" type="button">&#9733;</button>
+  <button class="stella" data-voto="5" type="button">&#9733;</button>
+  <button class="stella" data-voto="6" type="button">&#9733;</button>
+  <button class="stella" data-voto="7" type="button">&#9733;</button>
+  <button class="stella" data-voto="8" type="button">&#9733;</button>
+  <button class="stella" data-voto="9" type="button">&#9733;</button>
+  <button class="stella" data-voto="10" type="button">&#9733;</button>
+</div>
 
   <p>Lasciaci un commento qui in tutta sincerità</p>
   <input type="text" id="input-feedback" placeholder="Scrivi il tuo commento qui">
@@ -28,6 +28,18 @@
   <button id="btn-feedback">Invia Feedback</button>
   <button id="btn-info">More Info</button>
 </div>
+<style>
+  .stella {
+    font-size: 2rem;
+    color: gray;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .stella.attiva {
+    color: cyan;
+  }
+</style>
 
 
     <script src="./script.js/script_feedback.js"></script>
