@@ -15,7 +15,7 @@ circle {
     stroke-width: 10px;
 }
 
-.primo-cerchio {
+.first-circle {
     stroke: #ce0fbe;
 }
 
@@ -27,7 +27,7 @@ circle {
     font-size: 6rem;
 }
 
-#secondo-cerchio {
+#second-circle {
     stroke: aqua;
     stroke-dasharray: 565;                      /*lunghezza del cerchio che dovra sparire, deriva dal raggio=90*/
     stroke-dashoffset: 0;                       /*Inzia il movimento dal punto 0 di 565*/
@@ -35,3 +35,14 @@ circle {
     stroke-linecap: round;                      /* Arrotonda le estremità, da togliere se non ci piace*/
 }
 
+.btn {
+
+}
+
+#nextBtn{
+
+}
+
+.selected{
+    color: red;
+}
