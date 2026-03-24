@@ -11,7 +11,11 @@
       <!-- PAGINA 1: Welcome -->
       <section id="welcome">
         <header>
-          <img id="#logoEpicode" />
+          <img
+            id="logoEpicode"
+            src="./assets/epicode_logo.png"
+            alt="Logo Epicode"
+          />
           <h1 class="titolo">Welcome to your exam</h1>
         </header>
 
@@ -40,54 +44,58 @@
       </section>
       <!-- PAGINA 2: Question 1 -->
       <section id="benchmark">
-        <h1 class="titolo">How can i create a checkbox in HTML?</h1>
-        <div class="answers">
-          <button class="option">&lt;innertext&gt;</button>
-          <button class="option correct">innertext &gt;</button>
-          <button class="option">&lt;innertext &gt;</button>
-          <button class="option">&lt; innertext&gt;</button>
+        <div id="domanda"><h1>Domanda qui</h1></div>
+
+        <div id="risposte">
+          <button onclick="continua()">Risposta 1</button>
+          <button onclick="continua()">Risposta 2</button>
+          <button onclick="continua()">Risposta 3</button>
+          <button onclick="continua()">Risposta 4</button>
         </div>
-        <div>
-          <p class="question">QUESTION 1 / 10</p>
+
+        <div id="time-container">
+          <svg width="200" height="200">
+            <circle cx="100" cy="100" r="90" class="primo-cerchio"></circle>
+            <circle cx="100" cy="100" r="90" id="secondo-cerchio"></circle>
+          </svg>
+          <div id="display">60</div>
         </div>
-        <div><span id="timer1">16</span> seconds remaining</div>
+
+        <button onclick="continua()">Avanti</button>
+
+        <footer>
+          <h2 class="titoliSecondari">Question <span>1</span>/10</h2>
+        </footer>
       </section>
 
       <!-- PAGINA 3: Results -->
       <section id="results">
-        <h1>Results</h1>
+        <h1 class="titolo">Results</h1>
         <p>The summary of your answers:</p>
 
-        <div class="percentuale-corrette">
-          <div class="testo-corrette">
-            <p>Correct</p>
-            <h2>66.7%</h2>
-            <p>4/6 questions</p>
+        <div class="results-container">
+          <div class="stat-box">
+            <h2 id="percentuale-corrette" class="titoliSecondari">0%</h2>
+            <p id="testo-corrette">0/0 questions</p>
           </div>
-        </div>
 
-        <div class="congrats">
-          <p>
-            Congratulations!<br />
-            <strong>You passed the exam.</strong><br />
-            We'll send you the certificate in few minutes.<br />
-            Check your email (including promotions / spam folder)
-          </p>
-        </div>
+          <div id="donut-chart">
+            <div id="messaggio-risultato">
+              <p>In attesa dei risultati...</p>
+            </div>
+          </div>
 
-        <div class="percentuale-sbagliate">
-          <div class="testo-sbagliate">
-            <p>Wrong</p>
-            <h2>33.3%</h2>
-            <p>2/6 questions</p>
+          <div class="stat-box">
+            <h2 id="percentuale-sbagliate" class="titoliSecondari">0%</h2>
+            <p id="testo-sbagliate">0/0 questions</p>
           </div>
         </div>
 
         <button>RATE US</button>
       </section>
 
-      <section id="stars">
-        <h1>Tell us how it’s going</h1>
+      <section id="feedback">
+        <h1 class="titolo">Tell us how it’s going</h1>
         <p>
           From 0 to 10, how likely are you to recommend EPICODE to a friend or a
           colleague?
