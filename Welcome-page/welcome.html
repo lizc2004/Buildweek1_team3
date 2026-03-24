@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/reset.css" />
+    <link rel="stylesheet" href="./assets/normalize.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Exam</title>
   </head>
   <body>
@@ -19,7 +21,7 @@
           <h1 class="titolo">Welcome to your exam</h1>
         </header>
 
-        <h2 class="titoliSecondari">Instructions</h2>
+        <h4 class="titoliSecondari">Instructions</h4>
         <div>
           <p>
             We don't expect most engineers to know the answers to all of these
@@ -47,10 +49,18 @@
         <div id="domanda"><h1>Domanda qui</h1></div>
 
         <div id="risposte">
-          <button onclick="continua()">Risposta 1</button>
-          <button onclick="continua()">Risposta 2</button>
-          <button onclick="continua()">Risposta 3</button>
-          <button onclick="continua()">Risposta 4</button>
+          <button class="buttonRisposte" onclick="continua()">
+            Risposta 1
+          </button>
+          <button class="buttonRisposte" onclick="continua()">
+            Risposta 2
+          </button>
+          <button class="buttonRisposte" onclick="continua()">
+            Risposta 3
+          </button>
+          <button class="buttonRisposte" onclick="continua()">
+            Risposta 4
+          </button>
         </div>
 
         <div id="time-container">
