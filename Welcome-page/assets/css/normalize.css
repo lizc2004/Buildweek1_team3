@@ -354,3 +354,7 @@ ul {
   list-style: disc;
   list-style-position: inside;
 }
+
+li {
+  margin: 0.4em 0;
+}
