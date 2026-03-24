@@ -1,3 +1,4 @@
+const examResults = [true, true, true, false, true, true, false, true, true, false] // arrey finto di prova
 // funzione 1: prendiamo l'array e lo elaboriamo per avere i risultati
 
 function calcoloRisultati() {
@@ -74,3 +75,5 @@ function mostraPaginaRisultati() {
 
     console.log("Pagina risultati generata con successo!", datiFinali)
 }
+
+mostraPaginaRisultati()
