@@ -24,6 +24,11 @@ b {
   font-weight: 700;
 }
 
+/* classe per dare l'hover pointer ai bottoni etc. */
+.hover:hover {
+  cursor: pointer;
+}
+
 #welcome,
 #benchmark,
 #results,
@@ -118,6 +123,10 @@ input[type="checkbox"]:checked::after {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* fine stili specifici pagina 1 *******************************************************************************/
+
+/* css specifico pagina 2 **************************************************************************************/
 
 /* button per la welcome e feedpack page */
 .buttonWelcomeFeedback {
