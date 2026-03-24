@@ -18,33 +18,63 @@ const resetTimer = ()=>{                        //Cliccando il button con questa
 const databaseQuestions = [
     {
         question: "Qual è l'oceano più vasto della Terra?",
-        answers: ["Oceano Atlantico", "Oceano Indiano", "Oceano Pacifico", "Oceano Artico"],
-        corretta: "Oceano Pacifico"
+        answers: [
+            { text: "Oceano Atlantico", correct: false },
+            { text: "Oceano Indiano", correct: false },
+            { text: "Oceano Pacifico", correct: true },
+            { text: "Oceano Artico", correct: false }
+        ],
+        
     },
     {
         question: "In quale città si trova la sede del Parlamento Europeo?",
-        answers: ["Bruxelles", "Strasburgo", "Lussemburgo", "Ginevra"],
-        corretta: "Strasburgo",
+        answers: [
+            { text: "Bruxelles", correct: false },
+            { text: "Strasburgo", correct: true },
+            { text: "Lussemburgo", correct: false },
+            { text: "Ginevra", correct: false }
+        ],
+        
     },
     {
         question: "Chi ha scritto il romanzo '1984'?",
-        answers: ["Aldous Huxley", "George Orwell", "Ray Bradbury", "Ernest Hemingway"],
-        corretta: "George Orwell"
+        answers: [
+            { text: "Aldous Huxley", correct: false },
+            { text: "George Orwell", correct: true },
+            { text: "Ray Bradbury", correct: false },
+            { text: "Ernest Hemingway", correct: false }
+        ],
+        
     },
     {
         question: "Quale scienziato ha formulato la teoria della relatività?",
-        answers: ["Isaac Newton", "Albert Einstein", "Nikola Tesla", "Galileo Galilei"],
-        corretta: "Albert Einstein"
+        answers: [
+            { text: "Isaac Newton", correct: false },
+            { text: "Albert Einstein", correct: true },
+            { text: "Nikola Tesla", correct: false },
+            { text: "Galileo Galilei", correct: false }
+        ],
+        
     },
     {
         question: "In che anno è iniziata la Prima Guerra Mondiale?",
-        answers: ["1912", "1914", "1918", "1939"],
-        corretta: "1914"
+        answers: [
+            { text: "1912", correct: false },
+            { text: "1914", correct: true },
+            { text: "1918", correct: false },
+            { text: "1939", correct: false }
+        ],
+        
     },
     {
         question: "Qual è il fiume più lungo del mondo?",
-        answers: ["Rio delle Amazzoni", "Nilo", "Mississippi", "Fiume Azzurro"],
-        corretta: "Nilo"
+        answers: [
+            { text: "Rio delle Amazzoni", correct: false },
+            { text: "Nilo", correct: true },
+            { text: "Mississippi", correct: false },
+            { text: "Fiume Azzurro", correct: false }
+        ],
+        
     },
 ]
 
@@ -59,15 +89,16 @@ let currentQuestionIndex= 0
 
 const showQuestion= ()=>{
     answersContainer.innerHTML= ""                                         //azzera le answers
-    nextBtn.style.display = "none"                                          //toglie il bottone avanti per ogni Question nuova
-    let currentQuestion= databaseQuestions[currentQuestionIndex]              //Pesca le Questions dall'array
+    nextBtn.style.display = "none"                                         //toglie il bottone avanti per ogni Question nuova
+    let currentQuestion= databaseQuestions[currentQuestionIndex]           //Pesca le Questions dall'array
+
     questionElement.innerHTML = currentQuestion.question                      
     let nQuestion= currentQuestionIndex +1                                  
     indice.innerHTML= nQuestion
                           
-        currentQuestion.answers.forEach(testoanswers => {
+        currentQuestion.answers.forEach(answerP => {
         const button = document.createElement('button')
-        button.innerHTML = testoanswers
+        button.innerHTML = answerP.text
         button.classList.add('btn')
         button.addEventListener('click', ()=>{
             nextBtn.style.display = 'block'
@@ -97,7 +128,6 @@ nextBtn.addEventListener('click', ()=>{
 
 
 startQuiz()
-
 
 const timer = ()=> {
     const countdown = setInterval(function(){                     //Esegue un blocco di codice ogni secondo
