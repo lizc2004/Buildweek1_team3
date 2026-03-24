@@ -50,7 +50,7 @@ const databaseQuestions = [
 
 
 
-const QuestionElement = document.querySelector('#question h1')
+const questionElement = document.querySelector('#question h1')
 const answersContainer = document.getElementById('answers')
 const indice = document.getElementById('indice')
 const nextBtn = document.getElementById('nextBtn')
@@ -61,7 +61,7 @@ const showQuestion= ()=>{
     answersContainer.innerHTML= ""                                         //azzera le answers
     nextBtn.style.display = "none"                                          //toglie il bottone avanti per ogni Question nuova
     let currentQuestion= databaseQuestions[currentQuestionIndex]              //Pesca le Questions dall'array
-    QuestionElement.innerHTML = currentQuestion.question                      
+    questionElement.innerHTML = currentQuestion.question                      
     let nQuestion= currentQuestionIndex +1                                  
     indice.innerHTML= nQuestion
                           
@@ -90,8 +90,8 @@ nextBtn.addEventListener('click', ()=>{
              showQuestion()
              resetTimer()
          } else {                                                        //Con questo else verranno mostrati i risultati
-             questionElement.innerHTML = "Quiz Terminato!"        
-             answersContainer.innerHTML = ""
+            questionElement.innerHTML = "Quiz Terminato!"        
+            answersContainer.innerHTML = ""
 }
 })
 
