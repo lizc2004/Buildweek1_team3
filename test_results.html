@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Risultati Esame</title>
+    <style>
+      :root {
+        --bg-color: #002b36;
+        --cyan: #5dffff;
+        --magenta: #c2128d;
+        --text-white: #ffffff;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #0c111b;
+        color: var(--text-white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px;
+      }
+
+      .results-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        max-width: 900px;
+        margin-top: 30px;
+      }
+
+      .stat-box {
+        text-align: center;
+      }
+
+      .stat-box h2 {
+        font-size: 3rem;
+        margin: 0;
+      }
+      .stat-box p {
+        color: #aaa;
+      }
+
+      #donut-chart {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        background: conic-gradient(var(--cyan) 0% 100%);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+
+      #donut-chart::before {
+        content: "";
+        position: absolute;
+        width: 75%;
+        height: 75%;
+        background-color: #0c111b;
+        border-radius: 50%;
+      }
+
+      #messaggio-risultato {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        width: 80%;
+      }
+
+      .testo-bold {
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin: 5px 0;
+      }
+      .testo-cyan {
+        color: var(--cyan);
+        margin: 5px 0;
+      }
+      .testo-magenta {
+        color: var(--magenta);
+        margin: 5px 0;
+      }
+      .testo-small {
+        font-size: 0.8rem;
+        opacity: 0.8;
+      }
+
+      .controls {
+        margin-top: 50px;
+      }
+      button {
+        padding: 10px 20px;
+        cursor: pointer;
+        background: #1e293b;
+        color: white;
+        border: 1px solid var(--cyan);
+        border-radius: 5px;
+        margin: 0 10px;
+      }
+      button:hover {
+        background: var(--cyan);
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Esito del tuo Esame</h1>
+
+    <div class="results-container">
+      <div class="stat-box">
+        <h2 id="percentuale-corrette">0%</h2>
+        <p id="testo-corrette">0/0 questions</p>
+      </div>
+
+      <div id="donut-chart">
+        <div id="messaggio-risultato">
+          <p>In attesa dei risultati...</p>
+        </div>
+      </div>
+
+      <div class="stat-box">
+        <h2 id="percentuale-sbagliate">0%</h2>
+        <p id="testo-sbagliate">0/0 questions</p>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="testEsame(true)">Simula Promosso (80%)</button>
+      <button onclick="testEsame(false)">Simula Bocciato (40%)</button>
+    </div>
+
+    <script>
+      let examResults = [];
+
+      function calcoloRisultati() {
+        const totaleDomande = examResults.length;
+        const risposteCorrette = examResults.filter(
+          (risposta) => risposta === true,
+        ).length;
+        const risposteSbagliate = totaleDomande - risposteCorrette;
+        const percentualeCorrette = (
+          (risposteCorrette / totaleDomande) *
+          100
+        ).toFixed(1);
+        const percentualeSbagliate = (100 - percentualeCorrette).toFixed(1);
+
+        return {
+          totale: totaleDomande,
+          corrette: risposteCorrette,
+          sbagliate: risposteSbagliate,
+          percentualeC: percentualeCorrette,
+          percentualeS: percentualeSbagliate,
+        };
+      }
+
+      function aggiornaTestiHtml(dati) {
+        document.getElementById("percentuale-corrette").innerText =
+          dati.percentualeC + "%";
+        document.getElementById("testo-corrette").innerText =
+          dati.corrette + "/" + dati.totale + " questions";
+        document.getElementById("percentuale-sbagliate").innerText =
+          dati.percentualeS + "%";
+        document.getElementById("testo-sbagliate").innerText =
+          dati.sbagliate + "/" + dati.totale + " questions";
+        console.log("Testi aggiornati correttamente.");
+      }
+
+      function aggiornaGrafico(dati) {
+        const grafico = document.getElementById("donut-chart");
+        const gradiente = `conic-gradient(
+                #c2128d ${dati.percentualeS}%, 
+                #5dffff ${dati.percentualeS}% 100%
+            )`;
+        grafico.style.background = gradiente;
+        console.log("Grafico aggiornato con gradiente:", gradiente);
+      }
+
+      function mostraMessaggioCentrale(dati) {
+        const contenitore = document.getElementById("messaggio-risultato");
+        if (parseFloat(dati.percentualeC) >= 60) {
+          contenitore.innerHTML = `
+                    <p class="testo-bold">Congratulazioni</p>
+                    <p class="testo-cyan">Hai superato l'esame</p>
+                    <p class="testo-small">Ti invieremo il certificato tra pochi minuti. Controlla la tua email</p>
+                `;
+        } else {
+          contenitore.innerHTML = `
+                    <p class="testo-bold">Oops!</p>
+                    <p class="testo-magenta">Non hai superato l'esame</p>
+                    <p class="testo-small">Non preoccuparti! Puoi riprovare per migliorare il tuo punteggio.</p>
+                `;
+        }
+      }
+
+      function mostraPaginaRisultati() {
+        const datiFinali = calcoloRisultati();
+        aggiornaTestiHtml(datiFinali);
+        aggiornaGrafico(datiFinali);
+        mostraMessaggioCentrale(datiFinali);
+        console.log("Pagina risultati generata!", datiFinali);
+      }
+
+      function testEsame(promosso) {
+        if (promosso) {
+          examResults = [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+          ];
+        } else {
+          examResults = [
+            true,
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+          ];
+        }
+        mostraPaginaRisultati();
+      }
+    </script>
+  </body>
+</html>
