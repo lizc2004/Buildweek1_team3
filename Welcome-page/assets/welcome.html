@@ -13,14 +13,10 @@
       <!-- PAGINA 1: Welcome -->
       <section id="welcome">
         <header>
-          <img
-            id="logoEpicode"
-            src="./assets/epicode_logo.png"
-            alt="Logo Epicode"
-          />
+          <img src="./epicode_logo.png" alt="Logo Epicode" />Logo Epicode
           <h1 class="titolo">Welcome to your exam</h1>
         </header>
-        <div class="istruzioni"></div>
+
         <h4 class="titoliSecondari">Instructions</h4>
         <div>
           <p>
@@ -37,7 +33,7 @@
             </li>
             <li>This exam will take approx. 0-5 minutes.</li>
           </ul>
-          <form class="formPromessa">
+          <form>
             <input type="checkbox" /> I promise to answer myself without help
             from anyone
           </form>
@@ -46,8 +42,6 @@
       </section>
       <!-- PAGINA 2: Question 1 -->
       <section id="benchmark">
-        <div id="display"></div>
-        <div id="second-circle"></div>
         <div id="domanda"><h1>Domanda qui</h1></div>
 
         <div id="risposte">
@@ -131,7 +125,7 @@
           id="input-feedback"
           placeholder="Write your comment here"
         ></textarea>
-
+        <div></div>
         <div class="controls">
           <button id="btn-feedback" type="button">Submit Feedback</button>
           <button id="btn-info" type="button">MORE INFO</button>
@@ -139,5 +133,7 @@
       </section>
     </main>
     <script src="script_results.JS"></script>
+    <script src="benchmarkScript.js"></script>
+    <script src="script_feedback.js"></script>
   </body>
 </html>
