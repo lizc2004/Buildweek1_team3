@@ -14,7 +14,6 @@ const selezionaStella = function (numero) {
 };
 
 const stelle = document.querySelectorAll(".stella");
-
 stelle.forEach((stella) => {
   stella.addEventListener("click", () => {
     const voto = Number(stella.dataset.voto);
