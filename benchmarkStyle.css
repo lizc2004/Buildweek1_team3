@@ -1,5 +1,5 @@
 #time-container {
-    position: relative;
+    position: relative;                   /*Serve per mettere il contenuto esattamente al centro*/
     width: 200px;
     height: 200px;
 }
@@ -7,11 +7,11 @@
 svg {
     width: 200px;
     height: 200px;
-    transform: rotate(-90deg);
+    transform: rotate(-90deg);             /*Inziia a muoversi dall'alto*/
 }
 
 circle {
-    fill: none;
+    fill: none;                             /*Gli anelli sono vuoti. Stroke width è il suo bordo*/
     stroke-width: 10px;
 }
 
@@ -20,7 +20,7 @@ circle {
 }
 
 #display {
-    position: absolute;
+    position: absolute;                    /*Grazie al relative del contenitore è stato possibile mettere il display al centro con absolute*/
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -29,9 +29,9 @@ circle {
 
 #secondo-cerchio {
     stroke: aqua;
-    stroke-dasharray: 565;
-    stroke-dashoffset: 0;
-    transition: stroke-dashoffset 1s linear;
-    stroke-linecap: round;
+    stroke-dasharray: 565;                      /*lunghezza del cerchio che dovra sparire, deriva dal raggio=90*/
+    stroke-dashoffset: 0;                       /*Inzia il movimento dal punto 0 di 565*/
+    transition: stroke-dashoffset 1s linear;    /*Rende il movimento fluido, senza sembrerebbe una lancetta di un orologio*/
+    stroke-linecap: round;                      /* Arrotonda le estremità, da togliere se non ci piace*/
 }
 

@@ -1,5 +1,5 @@
 let secondi= 60
-let cerchio = 565
+let cerchio = 565                                 //Lunghezza cerchio che dovrà animarsi//
 let display= document.getElementById('display')
 
 const anello = ()=>{
@@ -8,7 +8,7 @@ const anello = ()=>{
 }
 
 const timer = ()=> {
-    setInterval(function(){
+    setInterval(function(){                     //Esegue un blocco di codice ogni secondo
          if(secondi > 0){
             if(secondi > 0){
                 secondi = secondi-1
@@ -16,12 +16,12 @@ const timer = ()=> {
                 anello()
             }
         }
-    }, 1000)
+    }, 1000)                        //Set interval funziona con i millisecondi, da specificare quindi che l'azione va compita ogni secondo
 }
 
 timer()
 
-const continua = ()=>{
+const continua = ()=>{                 //Cliccando il button con questa funzione il timer torna a 60
     secondi= 60
     display.innerText= 60
     anello()
