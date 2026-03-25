@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Exam</title>
+  </head>
+  <body>
+    <header>
+      <img id="logoEpicode" src="../img/epicode_logo.png" alt="Logoepi" />
+    </header>
+    <main>
+      <!-- PAGINA 1: Welcome -->
+
+      <section id="welcome">
+        <article class="istruzioni">
+          <h1 class="titolo">Welcome to <br /><b>your exam</b></h1>
+
+          <div>
+            <h3 class="titoliSecondari">Instructions</h3>
+            <p>
+              We don't expect most engineers to know the answers to all of these
+              <br />
+              questions, so don't worry if you're unsure of a few of them.
+            </p>
+          </div>
+
+          <div>
+            <ul>
+              <li>
+                Each question is <b>timed</b> and can only be
+                <b>answered once</b>.
+              </li>
+              <li>
+                Changing browser tab or opening other windows will
+                <b>invalidate the question</b>.
+              </li>
+              <li>This exam will take approx. <b>0-5 minutes</b>.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="formPromessa">
+          <form>
+            <input type="checkbox" /> I promise to answer myself without help
+            from anyone
+          </form>
+          <div><button class="buttonWelcomeFeedback">PROCEED</button></div>
+        </article>
+      </section>
+      <!-- PAGINA 2: Question 1 -->
+      <section id="benchmark">
+        <div id="domanda"><h1>Domanda qui</h1></div>
+
+        <div id="risposte">
+          <button class="buttonRisposte" onclick="continua()">
+            Risposta 1
+          </button>
+          <button class="buttonRisposte" onclick="continua()">
+            Risposta 2
+          </button>
+          <button class="buttonRisposte" onclick="continua()">
+            Risposta 3
+          </button>
+          <button class="buttonRisposte" onclick="continua()">
+            Risposta 4
+          </button>
+        </div>
+
+        <div id="time-container">
+          <svg width="200" height="200">
+            <circle cx="100" cy="100" r="90" class="primo-cerchio"></circle>
+            <circle cx="100" cy="100" r="90" id="secondo-cerchio"></circle>
+          </svg>
+          <div id="display">60</div>
+        </div>
+
+        <button onclick="continua()">Avanti</button>
+
+        <footer>
+          <h2 class="titoliSecondari">Question <span>1</span>/10</h2>
+        </footer>
+      </section>
+
+      <!-- PAGINA 3: Results -->
+      <section id="results">
+        <h1 class="titolo">Results</h1>
+        <p>The summary of your answers:</p>
+
+        <div class="results-container">
+          <div class="stat-box">
+            <h2 id="percentuale-corrette" class="titoliSecondari">0%</h2>
+            <p id="testo-corrette">0/0 questions</p>
+          </div>
+
+          <div id="donut-chart">
+            <div id="messaggio-risultato">
+              <p></p>
+            </div>
+          </div>
+
+          <div class="stat-box">
+            <h2 id="percentuale-sbagliate" class="titoliSecondari">0%</h2>
+            <p id="testo-sbagliate">0/0 questions</p>
+          </div>
+        </div>
+
+        <button>RATE US</button>
+      </section>
+      <!-- PAGINA 4: Feedback -->
+      <section id="feedback">
+        <h1 class="titolo">Tell us how it's going</h1>
+        <p>
+          From 0 to 10, how likely are you to recommend EPICODE to a friend or a
+          colleague?
+        </p>
+
+        <div class="stars">
+          <button class="stella" data-voto="1">&#9733;</button>
+          <button class="stella" data-voto="2">&#9733;</button>
+          <button class="stella" data-voto="3">&#9733;</button>
+          <button class="stella" data-voto="4">&#9733;</button>
+          <button class="stella" data-voto="5">&#9733;</button>
+          <button class="stella" data-voto="6">&#9733;</button>
+          <button class="stella" data-voto="7">&#9733;</button>
+          <button class="stella" data-voto="8">&#9733;</button>
+          <button class="stella" data-voto="9">&#9733;</button>
+          <button class="stella" data-voto="10">&#9733;</button>
+        </div>
+
+        <p>Leave us an open feedback about your experience so far</p>
+        <textarea
+          id="input-feedback"
+          placeholder="Write your comment here"
+        ></textarea>
+
+        <div class="controls">
+          <button id="btn-feedback" type="button">Submit Feedback</button>
+          <button id="btn-info" type="button">MORE INFO</button>
+        </div>
+      </section>
+    </main>
+    <script src="../../script.js/scriptQuestions.js"></script>
+    <script src="../../script.js/scriptBenchmark.js"></script>
+    <script src="../../script.js/script_results.JS"></script>
+    <script src="../../script.js/script_feedback.js"></script>
+  </body>
+</html>
