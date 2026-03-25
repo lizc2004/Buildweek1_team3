@@ -44,43 +44,38 @@
         </article>
         <article class="formPromessa">
           <form>
-            <input type="checkbox" /> I promise to answer myself without help
-            from anyone
+            <input type="checkbox" id="promise" /> I promise to answer myself
+            without help from anyone
           </form>
-          <div><button class="buttonWelcomeFeedback">PROCEED</button></div>
+          <div>
+            <button class="buttonWelcomeFeedback" id="btn-proceed">
+              PROCEED
+            </button>
+          </div>
         </article>
       </section>
       <!-- PAGINA 2: Question 1 -->
       <section id="benchmark">
-        <div id="domanda"><h1>Domanda qui</h1></div>
-
-        <div id="risposte">
-          <button class="buttonRisposte" onclick="continua()">
-            Risposta 1
-          </button>
-          <button class="buttonRisposte" onclick="continua()">
-            Risposta 2
-          </button>
-          <button class="buttonRisposte" onclick="continua()">
-            Risposta 3
-          </button>
-          <button class="buttonRisposte" onclick="continua()">
-            Risposta 4
-          </button>
+        <div id="question">
+          <h1>Domanda qui</h1>
         </div>
+
+        <div id="answers"></div>
 
         <div id="time-container">
           <svg width="200" height="200">
             <circle cx="100" cy="100" r="90" class="primo-cerchio"></circle>
-            <circle cx="100" cy="100" r="90" id="secondo-cerchio"></circle>
+            <circle cx="100" cy="100" r="90" id="second-circle"></circle>
           </svg>
           <div id="display">60</div>
         </div>
 
-        <button onclick="continua()">Avanti</button>
+        <button id="nextBtn">Avanti</button>
 
         <footer>
-          <h2 class="titoliSecondari">Question <span>1</span>/10</h2>
+          <h2 class="titoliSecondari">
+            Question <span id="current-question">1</span>/10
+          </h2>
         </footer>
       </section>
 
@@ -97,7 +92,13 @@
 
           <div id="donut-chart">
             <div id="messaggio-risultato">
-              <p></p>
+              <p>Congratulations! You passed the exam</p>
+            </div>
+            <div>
+              <p>
+                We'll send you the certificate in few minutes. Check your email
+                (including promotions/span folder)
+              </p>
             </div>
           </div>
 
@@ -146,7 +147,5 @@
     <script src="../../script.js/scriptBenchmark.js"></script>
     <script src="../../script.js/script_results.JS"></script>
     <script src="../../script.js/script_feedback.js"></script>
-
-    <!-- questo è un commento di prova -->
   </body>
 </html>
