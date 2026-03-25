@@ -63,8 +63,7 @@ nextBtn.addEventListener('click', ()=>{
              showQuestion()
              resetTimer()
          } else {                                                        //Con questo else verranno mostrati i risultati
-            questionElement.innerHTML = "Quiz Terminato!"        
-            answersContainer.innerHTML = ""
+            mostraPaginaRisultati()
 }
 })
 
@@ -106,5 +105,3 @@ const timer = ()=> {
 
 timer()
 startBlink()
-
-console.log(examResults)
