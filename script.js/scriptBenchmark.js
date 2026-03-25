@@ -62,9 +62,8 @@ nextBtn.addEventListener('click', ()=>{
          if (currentQuestionIndex < databaseQuestions.length){
              showQuestion()
              resetTimer()
-         } else {                                                        //Con questo else verranno mostrati i risultati
-            questionElement.innerHTML = "Quiz Terminato!"        
-            answersContainer.innerHTML = ""
+         } else {                                              //Con questo else verranno mostrati i risultati
+            mostraPaginaRisultati()
 }
 })
 
@@ -101,10 +100,8 @@ const timer = ()=> {
             resetTimer()
             timer()
             }
-    }, 1000)                                                    //Set interval funziona con i milliseconds, da specificare quindi che l'azione va compita ogni secondo
+    }, 1000)                             //Set interval funziona con i milliseconds, da specificare quindi che l'azione va compita ogni secondo
 }
 
 timer()
 startBlink()
-
-console.log(examResults)

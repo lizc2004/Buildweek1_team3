@@ -1,36 +1,17 @@
-const examResults = [
-  true,
-  true,
-  true,
-  false,
-  true,
-  true,
-  false,
-  true,
-  true,
-  false,
-]; // arrey finto di prova
-// funzione 1: prendiamo l'array e lo elaboriamo per avere i risultati
-
 function calcoloRisultati() {
-  const totaleDomande = examResults.length; //array contentente le risposte
-  const risposteCorrette = examResults.filter(
-    (risposta) => risposta === true,
-  ).length;
-  const risposteSbagliate = totaleDomande - risposteCorrette;
-  const percentualeCorrette = (
-    (risposteCorrette / totaleDomande) *
-    100
-  ).toFixed(1);
-  const percentualeSbagliate = (100 - percentualeCorrette).toFixed(1);
+    const totaleDomande = examResults.length //array contentente le risposte
+    const risposteCorrette = examResults.filter(risposta => risposta === true).length
+    const risposteSbagliate = totaleDomande - risposteCorrette
+    const percentualeCorrette = ((risposteCorrette / totaleDomande) * 100).toFixed(1)
+    const percentualeSbagliate = (100 - percentualeCorrette).toFixed(1)
 
-  return {
-    totale: totaleDomande,
-    corrette: risposteCorrette,
-    sbagliate: risposteSbagliate,
-    percentualeC: percentualeCorrette,
-    percentualeS: percentualeSbagliate,
-  };
+    return {
+        totale: totaleDomande,
+        corrette: risposteCorrette,
+        sbagliate: risposteSbagliate,
+        percentualeC: percentualeCorrette,
+        percentualeS: percentualeSbagliate
+    }
 }
 
 // funzione 2: modificare i testi html nella pagina results
@@ -63,18 +44,18 @@ function aggiornaGrafico(dati) {
 // funzione 4: messaggio centrale
 
 function mostraMessaggioCentrale(dati) {
-  const contenitore = document.getElementById("messaggio-risultato");
-  if (dati.percentualeC >= 60) {
-    contenitore.innerHTML = `
+    const contenitore = document.getElementById('messaggio-risultato')
+    if (dati.percentualeC >= 60) {
+        contenitore.innerHTML = `
             <p class="testo-bold">Congratulazioni</p>
             <p class="testo-cyan">Hai superato l'esame</p>
             <p class="testo-small">
                 Ti invieremo il certificato tra pochi minuti. 
                 Controlla la tua email
             </p>
-        `;
-  } else {
-    contenitore.innerHTML = `
+        `
+    } else {
+        contenitore.innerHTML = `
             <p class="testo-bold">Oops!</p>
             <p class="testo-magenta">Non hai superato l'esame</p>
             <p class="testo-small">
@@ -88,12 +69,11 @@ function mostraMessaggioCentrale(dati) {
 // funzione 5: aggiorna la pagina dei risultati
 
 function mostraPaginaRisultati() {
-  const datiFinali = calcoloRisultati();
-  aggiornaTestiHtml(datiFinali);
-  aggiornaGrafico(datiFinali);
-  mostraMessaggioCentrale(datiFinali);
+    const datiFinali = calcoloRisultati()
+    aggiornaTestiHtml(datiFinali)
+    aggiornaGrafico(datiFinali)
+    mostraMessaggioCentrale(datiFinali)
 
-  console.log("Pagina risultati generata con successo!", datiFinali);
+    console.log("Pagina risultati generata con successo!", datiFinali)
 }
 
-mostraPaginaRisultati();
