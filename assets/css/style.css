@@ -4,6 +4,7 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: "Inter", sans-serif;
+  font-size: 16px;
   font-weight: 300;
   color: white;
 }
@@ -189,7 +190,7 @@ input[type="checkbox"]:checked::after {
 }
 
 /* button per la welcome e feedpack page */
-.buttonWelcomeFeedback {
+.buttonCeleste {
   background-color: #00ffff;
   color: black;
   font-weight: bold;
@@ -197,6 +198,7 @@ input[type="checkbox"]:checked::after {
   width: 10em;
   height: 2.8em;
   box-shadow: 0px 0px 18px 2px #00ffff;
+  cursor: pointer;
 }
 
 /* button per le risposte */
@@ -206,6 +208,7 @@ input[type="checkbox"]:checked::after {
   border-radius: 30px;
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
+  cursor: pointer;
 }
 
 /* button risposta selezionata */
@@ -219,6 +222,7 @@ input[type="checkbox"]:checked::after {
     rgba(144, 0, 128, 1) 100%
   );
   color: white;
+  cursor: pointer;
 }
 
 #benchmark .buttonWelcomeFeedback {
@@ -249,6 +253,26 @@ input[type="checkbox"]:checked::after {
 /* fine stili specifici pagina 3 *******************************************************************************/
 
 /* css specifico pagina 4 **************************************************************************************/
+
+#feedback h1 {
+  font-weight: bold;
+}
+
+#feedback p {
+  margin: 2rem 0;
+}
+#feedback textarea {
+  color: white;
+  outline: none;
+  resize: none;
+  padding: 0 1.5rem;
+  height: 1.5rem;
+  width: 70%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1.5px solid #c2128d;
+  margin: 0 0 2.5rem 0;
+}
 
 /* fine stili specifici pagina 4 *******************************************************************************/
 #welcome,
