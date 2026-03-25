@@ -46,3 +46,8 @@ circle {
 .selected{
     color: red;
 }
+
+.blink {
+    opacity: 50%;
+    color: red;
+}

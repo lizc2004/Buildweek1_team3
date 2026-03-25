@@ -1,17 +1,18 @@
-let seconds= 60
+const timeQuestion = 30
+let seconds= timeQuestion
 let circle = 565                                 //Lunghezza circle che dovrà animarsi//
 let display= document.getElementById('display')
 
 const ring = ()=>{
-    let animationCircle = circle - (seconds*circle/60)
+    let animationCircle = circle - (seconds*circle/30)
     document.getElementById('second-circle').style.strokeDashoffset= animationCircle
 }
 
 const examResults= []
 
-const resetTimer = ()=>{                        //Cliccando il button con questa funzione il timer torna a 60
-    seconds= 60
-    display.innerText= 60
+const resetTimer = ()=>{                        //Cliccando il button con questa funzione il timer torna a 30
+    seconds= 30
+    display.innerText= 30
     ring()
 }
 
@@ -67,17 +68,33 @@ nextBtn.addEventListener('click', ()=>{
 }
 })
 
+let blink=0
+
+const startBlink = ()=>{
+    blink= setInterval(function() {
+        if(seconds <= timeQuestion/2 && seconds > 0){
+            display.classList.toggle('blink')
+        } else {
+            display.classList.remove('blink')
+            clearInterval(blink)
+        }
+    }, 500)                                                      //Velocità blink60
+}
 
 startQuiz()
 
 const timer = ()=> {
+    startBlink()
     const countdown = setInterval(function(){                     //Esegue un blocco di codice ogni secondo
             if(seconds > 0){
                 seconds--
                 display.innerText= seconds
                 ring()
             } else {
+                display.classList.remove('blink-red')
             clearInterval(countdown)
+            clearInterval(blink)
+            display.classList.remove('blink')
             examResults.push(false)
             currentQuestionIndex++
             showQuestion()
@@ -88,5 +105,6 @@ const timer = ()=> {
 }
 
 timer()
+startBlink()
 
 console.log(examResults)

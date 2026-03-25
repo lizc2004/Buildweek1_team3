@@ -59,4 +59,40 @@ const databaseQuestions = [
         ],
         
     },
+    {
+        question: "Qual è lo stato più piccolo del mondo per superficie?",
+        answers: [
+            { text: "Principato di Monaco", correct: false },
+            { text: "San Marino", correct: false },
+            { text: "Città del Vaticano", correct: true },
+            { text: "Liechtenstein", correct: false }
+        ]
+    },
+    {
+        question: "In quale continente si trova il deserto del Sahara?",
+        answers: [
+            { text: "Asia", correct: false },
+            { text: "Africa", correct: true },
+            { text: "America del Sud", correct: false },
+            { text: "Australia", correct: false }
+        ]
+    },
+    {
+        question: "In che anno è caduto il muro di Berlino?",
+        answers: [
+            { text: "1987", correct: false },
+            { text: "1989", correct: true },
+            { text: "1991", correct: false },
+            { text: "1985", correct: false }
+        ]
+    },
+    {
+        question: "Qual è il pianeta più grande del sistema solare?",
+        answers: [
+            { text: "Marte", correct: false },
+            { text: "Saturno", correct: false },
+            { text: "Giove", correct: true },
+            { text: "Nettuno", correct: false }
+        ]
+    },
 ]
