@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="benchmarkStyle.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div id="question"><h1>Qual è la capitale della Francia?</h1></div>
+      <div id="answers"></div>
+      <div id="time-container">
+        <svg width="200" height="200">
+          <circle cx="100" cy="100" r="90" class="first-circle"></circle>
+          <circle cx="100" cy="100" r="90" id="second-circle"></circle>
+        </svg>
+        <div id="display">30</div>
+      </div>
+    </main>
+    <footer>
+      <button id="nextBtn">Avanti</button>
+      <h2>Question <span id="indice">1</span>/10</h2>
+    </footer>
+    <script src="/script.js/scriptQuestions.js"></script>
+    <script src="/script.js/scriptBenchmark.js"></script>
+  </body>
+</html>
