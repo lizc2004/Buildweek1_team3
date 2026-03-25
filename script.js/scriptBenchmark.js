@@ -1,84 +1,20 @@
-let seconds= 60
+const timeQuestion = 30
+let seconds= timeQuestion
 let circle = 565                                 //Lunghezza circle che dovrà animarsi//
 let display= document.getElementById('display')
 
 const ring = ()=>{
-    let animationCircle = circle - (seconds*circle/60)
+    let animationCircle = circle - (seconds*circle/30)
     document.getElementById('second-circle').style.strokeDashoffset= animationCircle
 }
 
 const examResults= []
 
-const resetTimer = ()=>{                        //Cliccando il button con questa funzione il timer torna a 60
-    seconds= 60
-    display.innerText= 60
+const resetTimer = ()=>{                        // il timer torna a 30
+    seconds= 30
+    display.innerText= 30
     ring()
 }
-
-const databaseQuestions = [
-    {
-        question: "Qual è l'oceano più vasto della Terra?",
-        answers: [
-            { text: "Oceano Atlantico", correct: false },
-            { text: "Oceano Indiano", correct: false },
-            { text: "Oceano Pacifico", correct: true },
-            { text: "Oceano Artico", correct: false }
-        ],
-        
-    },
-    {
-        question: "In quale città si trova la sede del Parlamento Europeo?",
-        answers: [
-            { text: "Bruxelles", correct: false },
-            { text: "Strasburgo", correct: true },
-            { text: "Lussemburgo", correct: false },
-            { text: "Ginevra", correct: false }
-        ],
-        
-    },
-    {
-        question: "Chi ha scritto il romanzo '1984'?",
-        answers: [
-            { text: "Aldous Huxley", correct: false },
-            { text: "George Orwell", correct: true },
-            { text: "Ray Bradbury", correct: false },
-            { text: "Ernest Hemingway", correct: false }
-        ],
-        
-    },
-    {
-        question: "Quale scienziato ha formulato la teoria della relatività?",
-        answers: [
-            { text: "Isaac Newton", correct: false },
-            { text: "Albert Einstein", correct: true },
-            { text: "Nikola Tesla", correct: false },
-            { text: "Galileo Galilei", correct: false }
-        ],
-        
-    },
-    {
-        question: "In che anno è iniziata la Prima Guerra Mondiale?",
-        answers: [
-            { text: "1912", correct: false },
-            { text: "1914", correct: true },
-            { text: "1918", correct: false },
-            { text: "1939", correct: false }
-        ],
-        
-    },
-    {
-        question: "Qual è il fiume più lungo del mondo?",
-        answers: [
-            { text: "Rio delle Amazzoni", correct: false },
-            { text: "Nilo", correct: true },
-            { text: "Mississippi", correct: false },
-            { text: "Fiume Azzurro", correct: false }
-        ],
-        
-    },
-]
-
-
 
 const questionElement = document.querySelector('#question h1')
 const answersContainer = document.getElementById('answers')
@@ -132,17 +68,33 @@ nextBtn.addEventListener('click', ()=>{
 }
 })
 
+let blink=0
+
+const startBlink = ()=>{
+    blink= setInterval(function() {
+        if(seconds <= timeQuestion/2 && seconds > 0){
+            display.classList.toggle('blink')
+        } else {
+            display.classList.remove('blink')
+            clearInterval(blink)
+        }
+    }, 500)                                                      //Velocità blink
+}
 
 startQuiz()
 
 const timer = ()=> {
+    startBlink()
     const countdown = setInterval(function(){                     //Esegue un blocco di codice ogni secondo
             if(seconds > 0){
                 seconds--
                 display.innerText= seconds
                 ring()
             } else {
+                display.classList.remove('blink-red')
             clearInterval(countdown)
+            clearInterval(blink)
+            display.classList.remove('blink')
             examResults.push(false)
             currentQuestionIndex++
             showQuestion()
@@ -153,5 +105,6 @@ const timer = ()=> {
 }
 
 timer()
+startBlink()
 
 console.log(examResults)

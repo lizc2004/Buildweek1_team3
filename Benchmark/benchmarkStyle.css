@@ -7,7 +7,7 @@
 svg {
     width: 200px;
     height: 200px;
-    transform: rotate(-90deg);             /*Inziia a muoversi dall'alto*/
+    transform: scaleX(-1) rotate(-90deg);             /*Inizia a muoversi dall'alto*/
 }
 
 circle {
@@ -44,5 +44,10 @@ circle {
 }
 
 .selected{
+    color: red;
+}
+
+.blink {
+    opacity: 50%;
     color: red;
 }
