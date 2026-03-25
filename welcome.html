@@ -51,28 +51,13 @@
             <input type="checkbox" /> I promise to answer myself without help
             from anyone
           </form>
-          <div><button class="buttonWelcomeFeedback">PROCEED</button></div>
+          <div>
+            <button class="buttonWelcomeFeedback">PROCEED</button>
+          </div>
         </article>
       </section>
       <!-- PAGINA 2: Question 1 -->
       <section id="benchmark">
-        <div id="domanda"><h1>Domanda qui</h1></div>
-
-        <div id="risposte">
-          <button class="buttonRisposte" onclick="continua()">
-            Risposta 1
-          </button>
-          <button class="buttonRisposte" onclick="continua()">
-            Risposta 2
-          </button>
-          <button class="buttonRisposte" onclick="continua()">
-            Risposta 3
-          </button>
-          <button class="buttonRisposte" onclick="continua()">
-            Risposta 4
-          </button>
-        </div>
-
         <div id="time-container">
           <svg width="200" height="200">
             <circle cx="100" cy="100" r="90" class="primo-cerchio"></circle>
@@ -80,8 +65,30 @@
           </svg>
           <div id="display">60</div>
         </div>
+        <div id="domanda"><h1>Domanda qui</h1></div>
 
-        <button onclick="continua()">Avanti</button>
+        <article id="risposte">
+          <div>
+            <button class="buttonRisposte" onclick="continua()">
+              Risposta 1
+            </button>
+            <button class="buttonRisposte" onclick="continua()">
+              Risposta 2
+            </button>
+          </div>
+          <div>
+            <button class="buttonRisposte" onclick="continua()">
+              Risposta 3
+            </button>
+            <button class="buttonRisposte" onclick="continua()">
+              Risposta 4
+            </button>
+          </div>
+        </article>
+
+        <button class="buttonWelcomeFeedback" onclick="continua()">
+          Avanti
+        </button>
 
         <footer>
           <h2 class="titoliSecondari">Question <span>1</span>/10</h2>
