@@ -126,19 +126,48 @@ input[type="checkbox"]:checked::after {
 
 /* fine stili specifici pagina 1 *******************************************************************************/
 
-#welcome {
-  display: none;
-}
-
 /* css specifico pagina 2 **************************************************************************************/
 
 #benchmark {
-  height: 100vh;
   display: flex;
 }
 
 #time-container {
-  align-self: flex-end;
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#time-container svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#display {
+  position: relative;
+  z-index: 10;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.primo-cerchio {
+  fill: none;
+  stroke: white;
+  stroke-width: 10px;
+}
+
+#secondo-cerchio {
+  fill: none;
+  stroke: #00ffff;
+  stroke-width: 10px;
+  stroke-linecap: round;
 }
 
 #risposte {
@@ -194,4 +223,36 @@ input[type="checkbox"]:checked::after {
 
 #benchmark .buttonWelcomeFeedback {
   margin: 4em 0 3em 0;
+}
+
+/* fine stili specifici pagina 2 *******************************************************************************/
+
+/* css specifico pagina 3 **************************************************************************************/
+
+#results button {
+  background-color: transparent;
+  width: 11rem;
+  height: 3rem;
+  color: white;
+  font-weight: bold;
+  border: 2px solid white;
+  box-shadow: 0px 0px 45px 0px rgba(0, 255, 255, 0.18);
+  cursor: pointer;
+}
+
+.results-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* fine stili specifici pagina 3 *******************************************************************************/
+
+/* css specifico pagina 4 **************************************************************************************/
+
+/* fine stili specifici pagina 4 *******************************************************************************/
+#welcome,
+#benchmark,
+#results {
+  display: none;
 }
