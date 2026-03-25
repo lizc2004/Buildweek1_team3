@@ -10,7 +10,7 @@ const ring = ()=>{
 
 const examResults= []
 
-const resetTimer = ()=>{                        //Cliccando il button con questa funzione il timer torna a 30
+const resetTimer = ()=>{                        // il timer torna a 30
     seconds= 30
     display.innerText= 30
     ring()
@@ -78,7 +78,7 @@ const startBlink = ()=>{
             display.classList.remove('blink')
             clearInterval(blink)
         }
-    }, 500)                                                      //Velocità blink60
+    }, 500)                                                      //Velocità blink
 }
 
 startQuiz()
