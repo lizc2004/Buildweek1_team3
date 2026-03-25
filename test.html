@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Test</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0b113b;
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+
+    #feedback {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    #stelle {
+      margin: 30px 0;
+    }
+
+    .stella {
+      font-size: 2.5rem;
+      color: #2a245c;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin: 0 4px;
+    }
+
+    .stella.attiva {
+      color: cyan;
+    }
+
+    #input-feedback {
+      width: 80%;
+      max-width: 500px;
+      padding: 10px;
+      font-size: 1rem;
+      margin-top: 20px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="feedback">
+    <h1>Raccontaci come sta andando</h1>
+    <p>Da 1 a 10 quanto raccomanderesti EPICODE a un amico o collega?</p>
+
+    <div id="stelle">
+      <button class="stella" data-voto="1" type="button">&#9733;</button>
+      <button class="stella" data-voto="2" type="button">&#9733;</button>
+      <button class="stella" data-voto="3" type="button">&#9733;</button>
+      <button class="stella" data-voto="4" type="button">&#9733;</button>
+      <button class="stella" data-voto="5" type="button">&#9733;</button>
+      <button class="stella" data-voto="6" type="button">&#9733;</button>
+      <button class="stella" data-voto="7" type="button">&#9733;</button>
+      <button class="stella" data-voto="8" type="button">&#9733;</button>
+      <button class="stella" data-voto="9" type="button">&#9733;</button>
+      <button class="stella" data-voto="10" type="button">&#9733;</button>
+    </div>
+
+    <p>Lasciaci un commento qui in tutta sincerita</p>
+    <input
+      type="text"
+      id="input-feedback"
+      placeholder="Scrivi il tuo commento qui"
+    >
+
+    <br>
+
+    <button id="btn-feedback" type="button">Invia Feedback</button>
+    <button id="btn-info" type="button">More Info</button>
+  </div>
+
+  <script src="./script.js/script_feedback.js"></script>
+</body>
+</html>
