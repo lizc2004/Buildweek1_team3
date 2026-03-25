@@ -1,3 +1,6 @@
+const examResults = [true, true, true, false, true, true, false, true, true, false] // arrey finto di prova
+// funzione 1: prendiamo l'array e lo elaboriamo per avere i risultati
+
 function calcoloRisultati() {
     const totaleDomande = examResults.length //array contentente le risposte
     const risposteCorrette = examResults.filter(risposta => risposta === true).length
@@ -17,28 +20,24 @@ function calcoloRisultati() {
 // funzione 2: modificare i testi html nella pagina results
 
 function aggiornaTestiHtml(dati) {
-  document.getElementById("percentuale-corrette").innerText =
-    dati.percentualeC + "%";
-  document.getElementById("testo-corrette").innerText =
-    dati.corrette + "/" + dati.totale + " questions";
-  document.getElementById("percentuale-sbagliate").innerText =
-    dati.percentualeS + "%";
-  document.getElementById("testo-sbagliate").innerText =
-    dati.sbagliate + "/" + dati.totale + " questions";
+    document.getElementById('percentuale-corrette').innerText = dati.percentualeC + "%"
+    document.getElementById('testo-corrette').innerText = dati.corrette + "/" + dati.totale + " questions"
+    document.getElementById('percentuale-sbagliate').innerText = dati.percentualeS + "%"
+    document.getElementById('testo-sbagliate').innerText = dati.sbagliate + "/" + dati.totale + " questions"
 
-  console.log("Testi aggiornati correttamente nell'interfaccia.");
-}
+console.log("Testi aggiornati correttamente nell'interfaccia.")
+} 
 
 // funzione 3: aggiornare il grafico a torta
 
 function aggiornaGrafico(dati) {
-  const grafico = document.getElementById("donut-chart");
-  const gradiente = `conic-gradient(
+    const grafico = document.getElementById('donut-chart')
+    const gradiente = `conic-gradient(
         #c2128d ${dati.percentualeS}%, 
         #5dffff ${dati.percentualeS}% 100%
-    )`;
-  grafico.style.background = gradiente;
-  console.log("Grafico aggiornato con gradiente:", gradiente);
+    )`
+    grafico.style.background = gradiente
+    console.log("Grafico aggiornato con gradiente:", gradiente)
 }
 
 // funzione 4: messaggio centrale
@@ -62,8 +61,8 @@ function mostraMessaggioCentrale(dati) {
                 Non preoccuparti! Puoi riprovare per migliorare il tuo 
                 punteggio e ottenere il tuo certificato
             </p>
-        `;
-  }
+        `
+    }
 }
 
 // funzione 5: aggiorna la pagina dei risultati
@@ -77,3 +76,4 @@ function mostraPaginaRisultati() {
     console.log("Pagina risultati generata con successo!", datiFinali)
 }
 
+mostraPaginaRisultati()
