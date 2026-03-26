@@ -25,10 +25,12 @@ const nextBtn = document.getElementById("nextBtn");
 
 let currentQuestionIndex = 0;
 
-const showQuestion = () => {
-  answersContainer.innerHTML = ""; //azzera le answers
-  nextBtn.style.display = "none"; //toglie il bottone avanti per ogni Question nuova
-  let currentQuestion = databaseQuestions[currentQuestionIndex]; //Pesca le Questions dall'array
+//Gestisce il riciclo di domande e risposte
+
+const showQuestion= ()=>{
+    answersContainer.innerHTML= ""                                         //azzera le answers
+    nextBtn.style.display = "none"                                         //toglie il bottone avanti per ogni Question nuova
+    let currentQuestion= databaseQuestions[currentQuestionIndex]           //Pesca le Questions dall'array
 
   questionElement.innerHTML = currentQuestion.question;
   let nQuestion = currentQuestionIndex + 1;
@@ -51,27 +53,48 @@ const showQuestion = () => {
 };
 
 const startQuiz = () => {
-  currentQuestionIndex = 0;
-  showQuestion();
-};
+    currentQuestionIndex = 0
+    showQuestion()
+    resetTimer()
+}
 
-nextBtn.addEventListener("click", () => {
-  const selectedButton = answersContainer.querySelector(".btn.selected");
-  if (selectedButton) {
-    const result = selectedButton.dataset.isCorrect === "true";
-    examResults.push(result);
-  }
-  currentQuestionIndex++;
-  if (currentQuestionIndex < databaseQuestions.length) {
-    showQuestion();
-    resetTimer();
-  } else {
-    //Con questo else verranno mostrati i risultati
-    mostraPaginaRisultati();
-  }
-});
+const welcomePage = document.getElementById('welcome')
+const benchmarkPage = document.getElementById('benchmark')
+const resultPage = document.getElementById('results')
+const btnProceed= document.getElementsByClassName('buttonLightBlue')[0]
+const checkbox = document.getElementById('control')
 
-let blink = 0;
+btnProceed.addEventListener('click',()=>{
+    if(checkbox.checked){
+    welcomePage.classList.add('display-none')
+    benchmarkPage.classList.remove('display-none')
+    startQuiz()
+    timer()
+    }
+})
+
+//Gestisce il tasto avanti tra una domanda e l'altra
+
+nextBtn.addEventListener('click', ()=>{
+    const selectedButton= answersContainer.querySelector('.btn.selected')
+    if(selectedButton){
+        const result = selectedButton.dataset.isCorrect === 'true'
+        examResults.push(result)
+    }
+             currentQuestionIndex++
+         if (currentQuestionIndex < databaseQuestions.length){
+             showQuestion()
+             resetTimer()
+         } else {                                              //Con questo else verranno mostrati i risultati
+            mostraPaginaRisultati()
+            benchmarkPage.classList.add('display-none')
+            resultPage.classList.remove('display-none')
+}
+})
+
+// Timer che lampeggia
+
+let blink=0
 
 const startBlink = () => {
   blink = setInterval(function () {
@@ -84,7 +107,7 @@ const startBlink = () => {
   }, 500); //Velocità blink
 };
 
-startQuiz();
+//Gestisce e fa partire il Timer
 
 const timer = () => {
   startBlink();
@@ -108,5 +131,3 @@ const timer = () => {
   }, 1000); //Set interval funziona con i milliseconds, da specificare quindi che l'azione va compita ogni secondo
 };
 
-timer();
-startBlink();
