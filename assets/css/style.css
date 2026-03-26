@@ -328,6 +328,7 @@ circle {
 
 #feedback p {
   margin: 2rem 0;
+  font-weight: 600;
 }
 #feedback textarea {
   color: white;
@@ -353,6 +354,8 @@ circle {
   border: none;
   cursor: pointer;
   margin: 0 4px;
+  margin: 0;
+  padding: 0;
 }
 
 .stella.attiva {
