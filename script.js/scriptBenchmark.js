@@ -25,7 +25,7 @@ const nextBtn = document.getElementById("nextBtn");
 
 let currentQuestionIndex = 0;
 
-//Gestisce il riciclo di domande e risposte
+
 
 const showQuestion= ()=>{
     answersContainer.innerHTML= ""                                         //azzera le answers
