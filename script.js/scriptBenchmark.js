@@ -23,8 +23,6 @@ const nextBtn = document.getElementById('nextBtn')
 
 let currentQuestionIndex= 0
 
-//Gestisce il riciclo di domande e risposte
-
 const showQuestion= ()=>{
     answersContainer.innerHTML= ""                                         //azzera le answers
     nextBtn.style.display = "none"                                         //toglie il bottone avanti per ogni Question nuova
@@ -50,27 +48,9 @@ const showQuestion= ()=>{
 }
 
 const startQuiz = () => {
-    currentQuestionIndex = 0
-    showQuestion()
-    resetTimer()
+    currentQuestionIndex = 0;
+    showQuestion();
 }
-
-const welcomePage = document.getElementById('welcome')
-const benchmarkPage = document.getElementById('benchmark')
-const resultPage = document.getElementById('results')
-const btnProceed= document.getElementsByClassName('buttonWelcomeFeedback')[0]
-const checkbox = document.getElementById('control')
-
-btnProceed.addEventListener('click',()=>{
-    if(checkbox.checked){
-    welcomePage.classList.add('display-none')
-    benchmarkPage.classList.remove('display-none')
-    startQuiz()
-    timer()
-    }
-})
-
-//Gestisce il tasto avanti tra una domanda e l'altra
 
 nextBtn.addEventListener('click', ()=>{
     const selectedButton= answersContainer.querySelector('.btn.selected')
@@ -84,12 +64,8 @@ nextBtn.addEventListener('click', ()=>{
              resetTimer()
          } else {                                              //Con questo else verranno mostrati i risultati
             mostraPaginaRisultati()
-            benchmarkPage.classList.add('display-none')
-            resultPage.classList.remove('display-none')
 }
 })
-
-// Timer che lampeggia
 
 let blink=0
 
@@ -104,7 +80,7 @@ const startBlink = ()=>{
     }, 500)                                                      //Velocità blink
 }
 
-//Gestisce e fa partire il Timer
+startQuiz()
 
 const timer = ()=> {
     startBlink()
@@ -127,3 +103,5 @@ const timer = ()=> {
     }, 1000)                             //Set interval funziona con i milliseconds, da specificare quindi che l'azione va compita ogni secondo
 }
 
+timer()
+startBlink()
