@@ -17,7 +17,7 @@
 
       <section id="welcome">
         <article class="istruzioni">
-          <h1 class="titolo">Welcome to <br /><b>your exam</b></h1>
+          <h1>Welcome to <br /><b>your exam</b></h1>
 
           <div>
             <h2>Instructions</h2>
@@ -53,7 +53,6 @@
       <!-- PAGINA 2: Question 1 -->
       <section id="benchmark">
         <div id="question"><h1>Qual è la capitale della Francia?</h1></div>
-        <div id="answers"></div>
         <div id="time-container">
           <svg width="160" height="160">
             <circle cx="100" cy="100" r="90" class="first-circle"></circle>
@@ -61,14 +60,17 @@
           </svg>
           <div id="display">30</div>
         </div>
+        <article>
+          <div id="answers"></div>
 
-        <button id="nextBtn" class="buttonLightBlue">Avanti</button>
-        <h2>Question <span id="indice">1</span>/10</h2>
+          <button id="nextBtn" class="buttonLightBlue">Avanti</button>
+          <h2>Question <span id="indice">1</span>/10</h2>
+        </article>
       </section>
 
       <!-- PAGINA 3: Results -->
       <section id="results">
-        <h1 class="titolo">Results</h1>
+        <h1>Results</h1>
         <p>The summary of your answers:</p>
 
         <div class="results-container">
@@ -76,13 +78,12 @@
             <h2 id="percentuale-corrette">0%</h2>
             <p id="testo-corrette">0/0 questions</p>
           </div>
-
-          <div id="donut-chart">
+          <div class="chart">
+            <div id="donut-chart"></div>
             <div id="messaggio-risultato">
               <p></p>
             </div>
           </div>
-
           <div class="stat-box">
             <h2 id="percentuale-sbagliate">0%</h2>
             <p id="testo-sbagliate">0/0 questions</p>
@@ -93,7 +94,7 @@
       </section>
       <!-- PAGINA 4: Feedback -->
       <section id="feedback">
-        <h1 class="titolo">Tell us how it's going</h1>
+        <h1>Tell us how it's going</h1>
         <p>
           From 0 to 10, how likely are you to recommend EPICODE to a friend or a
           colleague?
