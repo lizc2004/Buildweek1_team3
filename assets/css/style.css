@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap");
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: white;
+}
+
+main {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url(../img/bg.jpg);
+  background-attachment: fixed;
+}
+
+section {
+  display: none;
+}
+
+b {
+  font-weight: 700;
+}
+
+h1 {
+  font-family: "Outfit", sans-serif;
+  line-height: 60px;
+  font-size: 60px;
+  display: inline;
+  margin-bottom: 0;
+}
+h2 {
+  color: #c2128d;
+  font-weight: bold;
+  font-size: 26px;
+  margin: 0.5em 0;
+}
+/* classe per dare l'hover pointer ai bottoni etc. */
+.hover:hover {
+  cursor: pointer;
+}
+
+#welcome,
+#benchmark,
+#results,
+#feedback {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* classe da associare ai titoli in quanto hanno font e dimensioni diverse */
+
+/* colori per titoli secondari es. Instructions della welcome page */
+/* da aggiungere nel header della pagina HTML il tag img con all'interno il logo  */
+#logoEpicode {
+  width: 10%;
+  min-width: 10em;
+  position: absolute;
+  top: 3em;
+  left: 15%;
+}
+
+/* css specifico pagina 1 ***************************************************************************************/
+#welcome {
+  padding: 0 15%;
+}
+
+.istruzioni {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  gap: 1.5em;
+  margin: 1.5em 0;
+  width: 100%;
+}
+
+.formPromessa {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5em;
+}
+.formPromessa form {
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 1em;
+  vertical-align: middle;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid white;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 0px;
+  position: relative;
+  vertical-align: middle;
+  margin-right: 1em;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #c2128d;
+  border-color: #00ffff;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  position: absolute;
+  color: black;
+  font-size: 12.5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* fine stili specifici pagina 1 *******************************************************************************/
+
+/* css specifico pagina 2 **************************************************************************************/
+
+circle {
+  fill: none;
+}
+
+#benchmark article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-bottom: 100px;
+}
+
+#time-container {
+  position: absolute;
+  top: 2.5rem;
+  right: 4rem;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background: transparent;
+}
+
+#time-container svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: transparent;
+}
+
+#display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.first-circle {
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 20px;
+}
+
+#second-circle {
+  stroke: #00ffff;
+  stroke-width: 20px;
+  stroke-linecap: round;
+  stroke-dasharray: 565;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+  transform: rotate(90deg) scaleX(-1);
+  transform-origin: center;
+}
+
+#question {
+  width: 65%;
+  text-align: center;
+  margin-top: 10%;
+  min-height: 130px;
+}
+
+#answers {
+  margin: 5rem 0;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+#nextBtn {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 0;
+  z-index: 20;
+}
+
+/* button per la welcome, question e feedpack page */
+.buttonLightBlue {
+  background-color: #00ffff;
+  color: black;
+  font-weight: bold;
+  border: none;
+  width: 10em;
+  height: 2.8em;
+  box-shadow: 0px 0px 18px 2px #00ffff;
+  cursor: pointer;
+}
+
+/* button per le risposte */
+.answers {
+  height: 61px;
+  width: 18em;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+}
+
+/* button risposta selezionata */
+.selected {
+  height: 61px;
+  width: 18em;
+  border-radius: 30px;
+  background: linear-gradient(
+    180deg,
+    rgba(210, 0, 148, 1) 0%,
+    rgba(144, 0, 128, 1) 100%
+  );
+  color: white;
+  cursor: pointer;
+}
+
+#benchmark .buttonWelcomeFeedback {
+  margin: 4em 0 3em 0;
+}
+
+/* fine stili specifici pagina 2 *******************************************************************************/
+
+/* css specifico pagina 3 **************************************************************************************/
+
+#results button {
+  background-color: transparent;
+  width: 11rem;
+  height: 3rem;
+  color: white;
+  font-weight: bold;
+  border: 2px solid white;
+  box-shadow: 0px 0px 45px 0px rgba(0, 255, 255, 0.18);
+  cursor: pointer;
+}
+
+.results-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 4% 0;
+}
+
+#donut-chart {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  -webkit-mask-image: radial-gradient(transparent 55%, black 55%);
+  mask-image: radial-gradient(transparent 55%, black 55%);
+  background: conic-gradient(#00ffff 0%, #c2128d 0%);
+}
+
+.chart {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#messaggio-risultato {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+
+  z-index: 10;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* fine stili specifici pagina 3 *******************************************************************************/
+
+/* css specifico pagina 4 **************************************************************************************/
+
+#feedback h1 {
+  font-weight: bold;
+}
+
+#feedback p {
+  margin: 2rem 0;
+}
+#feedback textarea {
+  color: white;
+  outline: none;
+  resize: none;
+  padding: 0 1.5rem;
+  height: 1.5rem;
+  width: 70%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1.5px solid #c2128d;
+  margin: 0 0 2.5rem 0;
+}
+
+#stelle {
+  margin: 30px 0;
+}
+
+.stella {
+  font-size: 2.5rem;
+  color: #2a245c;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 4px;
+}
+
+.stella.attiva {
+  color: cyan;
+}
+
+#input-feedback {
+  width: 80%;
+  max-width: 500px;
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* fine stili specifici pagina 4 *******************************************************************************/
+/* #welcome,
+.results,
+.feedback {
+  display: none;
+} */
