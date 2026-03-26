@@ -25,6 +25,19 @@ b {
   font-weight: 700;
 }
 
+h1 {
+  font-family: "Outfit", sans-serif;
+  line-height: 60px;
+  font-size: 60px;
+  display: inline;
+  margin-bottom: 0;
+}
+h2 {
+  color: #c2128d;
+  font-weight: bold;
+  font-size: 26px;
+  margin: 0.5em 0;
+}
 /* classe per dare l'hover pointer ai bottoni etc. */
 .hover:hover {
   cursor: pointer;
@@ -45,21 +58,8 @@ b {
 }
 
 /* classe da associare ai titoli in quanto hanno font e dimensioni diverse */
-.titolo {
-  font-family: "Outfit", sans-serif;
-  line-height: 60px;
-  font-size: 60px;
-  display: inline;
-  margin-bottom: 0;
-}
 
 /* colori per titoli secondari es. Instructions della welcome page */
-.titoliSecondari {
-  color: #c2128d;
-  font-weight: bold;
-  font-size: 26px;
-  margin: 0.5em 0;
-}
 /* da aggiungere nel header della pagina HTML il tag img con all'interno il logo  */
 #logoEpicode {
   width: 10%;
@@ -129,46 +129,58 @@ input[type="checkbox"]:checked::after {
 
 /* css specifico pagina 2 **************************************************************************************/
 
+circle {
+  fill: none;
+}
+
 #benchmark {
   display: flex;
 }
 
 #time-container {
-  position: fixed;
-  top: 25px;
-  right: 25px;
+  position: absolute;
+  top: 2.5rem;
+  right: 4rem;
   width: 200px;
   height: 200px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background: transparent;
 }
 
 #time-container svg {
-  position: absolute;
-  top: 0;
-  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: transparent;
 }
 
 #display {
-  position: relative;
-  z-index: 10;
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
 }
 
-.primo-cerchio {
-  fill: none;
-  stroke: white;
-  stroke-width: 10px;
+.first-circle {
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 20px;
 }
 
-#secondo-cerchio {
-  fill: none;
+#second-circle {
   stroke: #00ffff;
-  stroke-width: 10px;
+  stroke-width: 20px;
   stroke-linecap: round;
+  stroke-dasharray: 565;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+  transform: rotate(90deg) scaleX(-1);
+  transform-origin: center;
 }
 
 #risposte {
@@ -190,7 +202,7 @@ input[type="checkbox"]:checked::after {
 }
 
 /* button per la welcome e feedpack page */
-.buttonCeleste {
+.buttonLightBlue {
   background-color: #00ffff;
   color: black;
   font-weight: bold;
@@ -202,7 +214,7 @@ input[type="checkbox"]:checked::after {
 }
 
 /* button per le risposte */
-.buttonRisposte {
+.answers {
   height: 61px;
   width: 18em;
   border-radius: 30px;
@@ -212,7 +224,7 @@ input[type="checkbox"]:checked::after {
 }
 
 /* button risposta selezionata */
-.buttonSelezionato {
+.selected {
   height: 61px;
   width: 18em;
   border-radius: 30px;
@@ -274,9 +286,39 @@ input[type="checkbox"]:checked::after {
   margin: 0 0 2.5rem 0;
 }
 
+#stelle {
+  margin: 30px 0;
+}
+
+.stella {
+  font-size: 2.5rem;
+  color: #2a245c;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 4px;
+}
+
+.stella.attiva {
+  color: cyan;
+}
+
+#input-feedback {
+  width: 80%;
+  max-width: 500px;
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
 /* fine stili specifici pagina 4 *******************************************************************************/
-/* #welcome,
-#benchmark,
-#results {
+#welcome {
   display: none;
-} */
+}

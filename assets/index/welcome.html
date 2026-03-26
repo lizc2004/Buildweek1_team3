@@ -20,7 +20,7 @@
           <h1 class="titolo">Welcome to <br /><b>your exam</b></h1>
 
           <div>
-            <h3 class="titoliSecondari">Instructions</h3>
+            <h2>Instructions</h2>
             <p>
               We don't expect most engineers to know the answers to all of these
               <br />
@@ -47,46 +47,23 @@
             <input type="checkbox" /> I promise to answer myself without help
             from anyone
           </form>
-          <div>
-            <button class="buttonCeleste">PROCEED</button>
-          </div>
+          <div><button class="buttonLightBlue">PROCEED</button></div>
         </article>
       </section>
       <!-- PAGINA 2: Question 1 -->
       <section id="benchmark">
+        <div id="question"><h1>Qual è la capitale della Francia?</h1></div>
+        <div id="answers"></div>
         <div id="time-container">
-          <svg width="200" height="200">
-            <circle cx="100" cy="100" r="90" class="primo-cerchio"></circle>
-            <circle cx="100" cy="100" r="90" id="secondo-cerchio"></circle>
+          <svg width="160" height="160">
+            <circle cx="100" cy="100" r="90" class="first-circle"></circle>
+            <circle cx="100" cy="100" r="90" id="second-circle"></circle>
           </svg>
-          <div id="display">60</div>
+          <div id="display">30</div>
         </div>
-        <div id="domanda"><h1>Domanda qui</h1></div>
 
-        <article id="risposte">
-          <div>
-            <button class="buttonRisposte" onclick="continua()">
-              Risposta 1
-            </button>
-            <button class="buttonRisposte" onclick="continua()">
-              Risposta 2
-            </button>
-          </div>
-          <div>
-            <button class="buttonRisposte" onclick="continua()">
-              Risposta 3
-            </button>
-            <button class="buttonRisposte" onclick="continua()">
-              Risposta 4
-            </button>
-          </div>
-        </article>
-
-        <button class="buttonCeleste" onclick="continua()">Avanti</button>
-
-        <footer>
-          <h2 class="titoliSecondari">Question <span>1</span>/10</h2>
-        </footer>
+        <button id="nextBtn" class="buttonLightBlue">Avanti</button>
+        <h2>Question <span id="indice">1</span>/10</h2>
       </section>
 
       <!-- PAGINA 3: Results -->
@@ -96,7 +73,7 @@
 
         <div class="results-container">
           <div class="stat-box">
-            <h2 id="percentuale-corrette" class="titolo">0%</h2>
+            <h2 id="percentuale-corrette">0%</h2>
             <p id="testo-corrette">0/0 questions</p>
           </div>
 
@@ -107,7 +84,7 @@
           </div>
 
           <div class="stat-box">
-            <h2 id="percentuale-sbagliate" class="titolo">0%</h2>
+            <h2 id="percentuale-sbagliate">0%</h2>
             <p id="testo-sbagliate">0/0 questions</p>
           </div>
         </div>
@@ -143,7 +120,7 @@
 
         <div class="controls">
           <button id="btn-feedback" type="button">Submit Feedback</button>
-          <button id="btn-info" class="buttonCeleste" type="button">
+          <button id="btn-info" class="buttonLightBlue" type="button">
             MORE INFO
           </button>
         </div>
