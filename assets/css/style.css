@@ -133,8 +133,14 @@ circle {
   fill: none;
 }
 
-#benchmark {
+#benchmark article {
+  position: relative;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-bottom: 100px;
 }
 
 #time-container {
@@ -183,25 +189,33 @@ circle {
   transform-origin: center;
 }
 
-#risposte {
-  width: 100%;
+#question {
+  width: 65%;
+  text-align: center;
+  margin-top: 10%;
+  min-height: 130px;
+}
+
+#answers {
+  margin: 5rem 0;
+  width: 50%;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1em;
 }
 
-#risposte div {
-  width: 80%;
-  text-align: center;
+#nextBtn {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 0;
+  z-index: 20;
 }
 
-#risposte button {
-  margin: 0 1em;
-}
-
-/* button per la welcome e feedpack page */
+/* button per la welcome, question e feedpack page */
 .buttonLightBlue {
   background-color: #00ffff;
   color: black;
@@ -260,6 +274,48 @@ circle {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  margin: 4% 0;
+}
+
+#donut-chart {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  -webkit-mask-image: radial-gradient(transparent 55%, black 55%);
+  mask-image: radial-gradient(transparent 55%, black 55%);
+  background: conic-gradient(#00ffff 0%, #c2128d 0%);
+}
+
+.chart {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#messaggio-risultato {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+
+  z-index: 10;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* fine stili specifici pagina 3 *******************************************************************************/
@@ -319,6 +375,8 @@ button {
 }
 
 /* fine stili specifici pagina 4 *******************************************************************************/
-#welcome {
+/* #welcome,
+.results,
+.feedback {
   display: none;
-}
+} */
