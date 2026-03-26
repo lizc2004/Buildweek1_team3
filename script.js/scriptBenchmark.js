@@ -61,6 +61,7 @@ const startQuiz = () => {
 const welcomePage = document.getElementById('welcome')
 const benchmarkPage = document.getElementById('benchmark')
 const resultPage = document.getElementById('results')
+const feedbackPage = document.getElementById('feedback')
 const btnProceed= document.getElementsByClassName('buttonLightBlue')[0]
 const checkbox = document.getElementById('control')
 

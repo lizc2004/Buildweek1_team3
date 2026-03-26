@@ -77,3 +77,9 @@ function mostraPaginaRisultati() {
     console.log("Pagina risultati generata con successo!", datiFinali)
 }
 
+const rate= document.getElementById('rate')
+
+rate.addEventListener('click',()=>{
+  feedbackPage.classList.remove('display-none')
+  resultPage.classList.add('display-none')
+})
