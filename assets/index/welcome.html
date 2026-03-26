@@ -108,36 +108,34 @@
         <button>RATE US</button>
       </section>
       <!-- PAGINA 4: Feedback -->
-      <section id="feedback">
-        <h1 class="titolo">Tell us how it's going</h1>
-        <p>
-          From 0 to 10, how likely are you to recommend EPICODE to a friend or a
-          colleague?
-        </p>
+      <div id="feedback">
+        <h1>Raccontaci come sta andando</h1>
+        <p>Da 1 a 10 quanto raccomanderesti EPICODE a un amico o collega?</p>
 
-        <div class="stars">
-          <button class="stella" data-voto="1">&#9733;</button>
-          <button class="stella" data-voto="2">&#9733;</button>
-          <button class="stella" data-voto="3">&#9733;</button>
-          <button class="stella" data-voto="4">&#9733;</button>
-          <button class="stella" data-voto="5">&#9733;</button>
-          <button class="stella" data-voto="6">&#9733;</button>
-          <button class="stella" data-voto="7">&#9733;</button>
-          <button class="stella" data-voto="8">&#9733;</button>
-          <button class="stella" data-voto="9">&#9733;</button>
-          <button class="stella" data-voto="10">&#9733;</button>
+        <div id="stelle">
+          <button class="stella" data-voto="1" type="button">&#9733;</button>
+          <button class="stella" data-voto="2" type="button">&#9733;</button>
+          <button class="stella" data-voto="3" type="button">&#9733;</button>
+          <button class="stella" data-voto="4" type="button">&#9733;</button>
+          <button class="stella" data-voto="5" type="button">&#9733;</button>
+          <button class="stella" data-voto="6" type="button">&#9733;</button>
+          <button class="stella" data-voto="7" type="button">&#9733;</button>
+          <button class="stella" data-voto="8" type="button">&#9733;</button>
+          <button class="stella" data-voto="9" type="button">&#9733;</button>
+          <button class="stella" data-voto="10" type="button">&#9733;</button>
         </div>
 
-        <p>Leave us an open feedback about your experience so far</p>
-        <textarea
+        <p>Lasciaci un commento qui in tutta sincerità</p>
+        <input
+          type="text"
           id="input-feedback"
-          placeholder="Write your comment here"
-        ></textarea>
+          placeholder="Scrivi il tuo commento qui"
+        />
 
-        <div class="controls">
-          <button id="btn-info" type="button">MORE INFO</button>
-        </div>
-      </section>
+        <br />
+
+        <button id="btn-info" type="button">More Info</button>
+      </div>
     </main>
     <script src="../../script.js/scriptQuestions.js"></script>
     <script src="../../script.js/scriptBenchmark.js"></script>
