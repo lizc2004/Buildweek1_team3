@@ -275,8 +275,8 @@ input[type="checkbox"]:checked::after {
 }
 
 /* fine stili specifici pagina 4 *******************************************************************************/
-#welcome,
+/* #welcome,
 #benchmark,
 #results {
   display: none;
-}
+} */
