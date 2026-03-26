@@ -104,6 +104,10 @@
             <p id="testo-sbagliate">0/0 questions</p>
           </div>
         </div>
+        <div class="controls">
+          <button onclick="testEsame(true)">Simula Promosso (80%)</button>
+          <button onclick="testEsame(false)">Simula Bocciato (40%)</button>
+        </div>
 
         <button>RATE US</button>
       </section>
@@ -125,12 +129,11 @@
           <button class="stella" data-voto="10" type="button">&#9733;</button>
         </div>
 
-        <p>Lasciaci un commento qui in tutta sincerità</p>
-        <input
-          type="text"
+        <p>Leave us an open feedback about your experience so far</p>
+        <textarea
           id="input-feedback"
-          placeholder="Scrivi il tuo commento qui"
-        />
+          placeholder="Write your comment here"
+        ></textarea>
 
         <br />
 
