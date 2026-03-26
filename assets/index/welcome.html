@@ -17,10 +17,10 @@
 
       <section id="welcome">
         <article class="istruzioni">
-          <h1 class="titolo">Welcome to <br /><b>your exam</b></h1>
+          <h1>Welcome to <br /><b>your exam</b></h1>
 
           <div>
-            <h3 class="titoliSecondari">Instructions</h3>
+            <h2>Instructions</h2>
             <p>
               We don't expect most engineers to know the answers to all of these
               <br />
@@ -48,9 +48,7 @@
             without help from anyone
           </form>
           <div>
-            <button class="buttonWelcomeFeedback" id="btn-proceed">
-              PROCEED
-            </button>
+            <button class="LightBlue" id="btn-proceed">PROCEED</button>
           </div>
         </article>
       </section>
@@ -66,14 +64,8 @@
           <div id="display">30</div>
         </div>
 
-        <button id="nextBtn">Avanti</button>
+        <button class="LightBlue" id="nextBtn">Avanti</button>
         <h2>Question <span id="indice">1</span>/10</h2>
-
-        <footer>
-          <h2 class="titoliSecondari">
-            Question <span id="current-question">1</span>/10
-          </h2>
-        </footer>
       </section>
 
       <!-- PAGINA 3: Results -->
@@ -113,8 +105,11 @@
       </section>
       <!-- PAGINA 4: Feedback -->
       <div id="feedback">
-        <h1>Raccontaci come sta andando</h1>
-        <p>Da 1 a 10 quanto raccomanderesti EPICODE a un amico o collega?</p>
+        <h1>Tell us how it's going</h1>
+        <p>
+          On a scale from 1 to 10, how likely are you to recommend EPICODE to a
+          friend or colleague?
+        </p>
 
         <div id="stelle">
           <button class="stella" data-voto="1" type="button">&#9733;</button>
@@ -137,7 +132,7 @@
 
         <br />
 
-        <button id="btn-info" type="button">More Info</button>
+        <button class="LightBlue" id="btn-info" type="button">More Info</button>
       </div>
     </main>
     <script src="../../script.js/scriptQuestions.js"></script>
