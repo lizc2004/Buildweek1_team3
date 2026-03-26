@@ -1,4 +1,4 @@
-<!doctype html>/
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -44,14 +44,14 @@
         </article>
         <article class="formPromessa">
           <form>
-            <input type="checkbox" id="promise" /> I promise to answer myself
+            <input type="checkbox" id="control" /> I promise to answer myself
             without help from anyone
           </form>
           <div><button class="buttonLightBlue">PROCEED</button></div>
         </article>
       </section>
       <!-- PAGINA 2: Question 1 -->
-      <section id="benchmark">
+      <section id="benchmark" class="display-none">
         <div id="question"><h1>Qual è la capitale della Francia?</h1></div>
         <div id="time-container">
           <svg width="160" height="160">
@@ -69,14 +69,13 @@
       </section>
 
       <!-- PAGINA 3: Results -->
-      <section id="results">
-        <h1 class="titolo"><b>Results </b></h1>
+      <section id="results" class="display-none">
+        <h1>Results</h1>
         <p>The summary of your answers:</p>
 
         <div class="results-container">
           <div class="stat-box">
-            <h1>Corrette</h1>
-            <h1 id="percentuale-corrette"><b>0% </b></h1>
+            <h2 id="percentuale-corrette">0%</h2>
             <p id="testo-corrette">0/0 questions</p>
           </div>
           <div class="chart">
@@ -89,39 +88,33 @@
               </p>
             </div>
           </div>
-
           <div class="stat-box">
-            <h1>Errate</h1>
-            <h1 id="percentuale-sbagliate"><b> 0% </b></h1>
+            <h2 id="percentuale-sbagliate">0%</h2>
             <p id="testo-sbagliate">0/0 questions</p>
           </div>
         </div>
-        <!--<div class="controls">
-          <button onclick="testEsame(true)">Simula Promosso (80%)</button>
-          <button onclick="testEsame(false)">Simula Bocciato (40%)</button>
-        </div> -->
 
-        <button id="rate">RATE US</button>
+        <button>RATE US</button>
       </section>
       <!-- PAGINA 4: Feedback -->
-      <section id="feedback" class="display-none">
+      <section id="feedback">
         <h1>Tell us how it's going</h1>
         <p>
-          On a scale from 1 to 10, how likely are you to recommend EPICODE to a
-          friend or colleague?
+          From 0 to 10, how likely are you to recommend EPICODE to a friend or a
+          colleague?
         </p>
 
-        <div id="stelle">
-          <button class="stella" data-voto="1" type="button">&#9733;</button>
-          <button class="stella" data-voto="2" type="button">&#9733;</button>
-          <button class="stella" data-voto="3" type="button">&#9733;</button>
-          <button class="stella" data-voto="4" type="button">&#9733;</button>
-          <button class="stella" data-voto="5" type="button">&#9733;</button>
-          <button class="stella" data-voto="6" type="button">&#9733;</button>
-          <button class="stella" data-voto="7" type="button">&#9733;</button>
-          <button class="stella" data-voto="8" type="button">&#9733;</button>
-          <button class="stella" data-voto="9" type="button">&#9733;</button>
-          <button class="stella" data-voto="10" type="button">&#9733;</button>
+        <div class="stars">
+          <button class="stella" data-voto="1">&#9733;</button>
+          <button class="stella" data-voto="2">&#9733;</button>
+          <button class="stella" data-voto="3">&#9733;</button>
+          <button class="stella" data-voto="4">&#9733;</button>
+          <button class="stella" data-voto="5">&#9733;</button>
+          <button class="stella" data-voto="6">&#9733;</button>
+          <button class="stella" data-voto="7">&#9733;</button>
+          <button class="stella" data-voto="8">&#9733;</button>
+          <button class="stella" data-voto="9">&#9733;</button>
+          <button class="stella" data-voto="10">&#9733;</button>
         </div>
 
         <p>Leave us an open feedback about your experience so far</p>
