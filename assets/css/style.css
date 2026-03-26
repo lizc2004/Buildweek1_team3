@@ -259,6 +259,16 @@ circle {
 
 /* css specifico pagina 3 **************************************************************************************/
 
+#results {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 #results button {
   background-color: transparent;
   width: 11rem;
@@ -273,8 +283,10 @@ circle {
 .results-container {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
-  margin: 4% 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 40px 0;
 }
 
 #donut-chart {
@@ -314,8 +326,7 @@ circle {
 .stat-box {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex: 1;
 }
 
 /* fine stili specifici pagina 3 *******************************************************************************/
@@ -389,7 +400,6 @@ button {
   display: none;
 } */
 
-
-.display-none{
+.display-none {
   display: none !important;
 }
