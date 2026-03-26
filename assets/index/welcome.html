@@ -47,9 +47,7 @@
             <input type="checkbox" id="promise" /> I promise to answer myself
             without help from anyone
           </form>
-          <div>
-            <button class="LightBlue" id="btn-proceed">PROCEED</button>
-          </div>
+          <div><button class="buttonLightBlue">PROCEED</button></div>
         </article>
       </section>
       <!-- PAGINA 2: Question 1 -->
@@ -57,14 +55,14 @@
         <div id="question"><h1>Qual è la capitale della Francia?</h1></div>
         <div id="answers"></div>
         <div id="time-container">
-          <svg width="200" height="200">
+          <svg width="160" height="160">
             <circle cx="100" cy="100" r="90" class="first-circle"></circle>
             <circle cx="100" cy="100" r="90" id="second-circle"></circle>
           </svg>
           <div id="display">30</div>
         </div>
 
-        <button class="LightBlue" id="nextBtn">Avanti</button>
+        <button id="nextBtn" class="buttonLightBlue">Avanti</button>
         <h2>Question <span id="indice">1</span>/10</h2>
       </section>
 
@@ -75,7 +73,7 @@
 
         <div class="results-container">
           <div class="stat-box">
-            <h2 id="percentuale-corrette" class="titoliSecondari">0%</h2>
+            <h2 id="percentuale-corrette">0%</h2>
             <p id="testo-corrette">0/0 questions</p>
           </div>
 
@@ -92,7 +90,7 @@
           </div>
 
           <div class="stat-box">
-            <h2 id="percentuale-sbagliate" class="titoliSecondari">0%</h2>
+            <h2 id="percentuale-sbagliate">0%</h2>
             <p id="testo-sbagliate">0/0 questions</p>
           </div>
         </div>
@@ -130,10 +128,13 @@
           placeholder="Write your comment here"
         ></textarea>
 
-        <br />
-
-        <button class="LightBlue" id="btn-info" type="button">More Info</button>
-      </div>
+        <div class="controls">
+          <button id="btn-feedback" type="button">Submit Feedback</button>
+          <button id="btn-info" class="buttonLightBlue" type="button">
+            MORE INFO
+          </button>
+        </div>
+      </section>
     </main>
     <script src="../../script.js/scriptQuestions.js"></script>
     <script src="../../script.js/scriptBenchmark.js"></script>

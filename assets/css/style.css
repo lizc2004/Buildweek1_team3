@@ -4,6 +4,7 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: "Inter", sans-serif;
+  font-size: 16px;
   font-weight: 300;
   color: white;
 }
@@ -24,6 +25,19 @@ b {
   font-weight: 700;
 }
 
+h1 {
+  font-family: "Outfit", sans-serif;
+  line-height: 60px;
+  font-size: 60px;
+  display: inline;
+  margin-bottom: 0;
+}
+h2 {
+  color: #c2128d;
+  font-weight: bold;
+  font-size: 26px;
+  margin: 0.5em 0;
+}
 /* classe per dare l'hover pointer ai bottoni etc. */
 .hover:hover {
   cursor: pointer;
@@ -44,21 +58,8 @@ b {
 }
 
 /* classe da associare ai titoli in quanto hanno font e dimensioni diverse */
-.titolo {
-  font-family: "Outfit", sans-serif;
-  line-height: 60px;
-  font-size: 60px;
-  display: inline;
-  margin-bottom: 0;
-}
 
 /* colori per titoli secondari es. Instructions della welcome page */
-.titoliSecondari {
-  color: #c2128d;
-  font-weight: bold;
-  font-size: 26px;
-  margin: 0.5em 0;
-}
 /* da aggiungere nel header della pagina HTML il tag img con all'interno il logo  */
 #logoEpicode {
   width: 10%;
@@ -128,8 +129,80 @@ input[type="checkbox"]:checked::after {
 
 /* css specifico pagina 2 **************************************************************************************/
 
+circle {
+  fill: none;
+}
+
+#benchmark {
+  display: flex;
+}
+
+#time-container {
+  position: absolute;
+  top: 2.5rem;
+  right: 4rem;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background: transparent;
+}
+
+#time-container svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: transparent;
+}
+
+#display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.first-circle {
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 20px;
+}
+
+#second-circle {
+  stroke: #00ffff;
+  stroke-width: 20px;
+  stroke-linecap: round;
+  stroke-dasharray: 565;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+  transform: rotate(90deg) scaleX(-1);
+  transform-origin: center;
+}
+
+#risposte {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+#risposte div {
+  width: 80%;
+  text-align: center;
+}
+
+#risposte button {
+  margin: 0 1em;
+}
+
 /* button per la welcome e feedpack page */
-.buttonWelcomeFeedback {
+.buttonLightBlue {
   background-color: #00ffff;
   color: black;
   font-weight: bold;
@@ -137,19 +210,21 @@ input[type="checkbox"]:checked::after {
   width: 10em;
   height: 2.8em;
   box-shadow: 0px 0px 18px 2px #00ffff;
+  cursor: pointer;
 }
 
 /* button per le risposte */
-.buttonRisposte {
+.answers {
   height: 61px;
   width: 18em;
   border-radius: 30px;
   background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(11px);
+  color: white;
+  cursor: pointer;
 }
 
 /* button risposta selezionata */
-.buttonSelezionato {
+.selected {
   height: 61px;
   width: 18em;
   border-radius: 30px;
@@ -158,4 +233,92 @@ input[type="checkbox"]:checked::after {
     rgba(210, 0, 148, 1) 0%,
     rgba(144, 0, 128, 1) 100%
   );
+  color: white;
+  cursor: pointer;
+}
+
+#benchmark .buttonWelcomeFeedback {
+  margin: 4em 0 3em 0;
+}
+
+/* fine stili specifici pagina 2 *******************************************************************************/
+
+/* css specifico pagina 3 **************************************************************************************/
+
+#results button {
+  background-color: transparent;
+  width: 11rem;
+  height: 3rem;
+  color: white;
+  font-weight: bold;
+  border: 2px solid white;
+  box-shadow: 0px 0px 45px 0px rgba(0, 255, 255, 0.18);
+  cursor: pointer;
+}
+
+.results-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* fine stili specifici pagina 3 *******************************************************************************/
+
+/* css specifico pagina 4 **************************************************************************************/
+
+#feedback h1 {
+  font-weight: bold;
+}
+
+#feedback p {
+  margin: 2rem 0;
+}
+#feedback textarea {
+  color: white;
+  outline: none;
+  resize: none;
+  padding: 0 1.5rem;
+  height: 1.5rem;
+  width: 70%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1.5px solid #c2128d;
+  margin: 0 0 2.5rem 0;
+}
+
+#stelle {
+  margin: 30px 0;
+}
+
+.stella {
+  font-size: 2.5rem;
+  color: #2a245c;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 4px;
+}
+
+.stella.attiva {
+  color: cyan;
+}
+
+#input-feedback {
+  width: 80%;
+  max-width: 500px;
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* fine stili specifici pagina 4 *******************************************************************************/
+#welcome {
+  display: none;
 }

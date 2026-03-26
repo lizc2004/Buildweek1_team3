@@ -38,6 +38,7 @@ const showQuestion = () => {
     const button = document.createElement("button");
     button.innerHTML = answerP.text;
     button.classList.add("btn");
+    button.classList.add("answers");
     button.dataset.isCorrect = answerP.correct; //Salva il booleano nel bottone
     button.addEventListener("click", () => {
       nextBtn.style.display = "block";
