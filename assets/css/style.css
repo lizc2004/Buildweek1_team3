@@ -184,10 +184,11 @@ circle {
   stroke-linecap: round;
   stroke-dasharray: 565;
   stroke-dashoffset: 0;
-  transition: stroke-dashoffset 1s linear;
+  transition: stroke-dashoffset 1s linear, stroke 0.4s ease;
   transform: rotate(90deg) scaleX(-1);
   transform-origin: center;
 }
+
 
 #question {
   width: 65%;
@@ -327,6 +328,28 @@ circle {
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+.confetto {
+  position: fixed;
+  top: -20px;
+  width: 10px;
+  height: 16px;
+  opacity: 0.9;
+  z-index: 9999;
+  animation: cadutaConfetti 4s linear forwards;
+  transform: rotate(20deg);
+}
+
+@keyframes cadutaConfetti {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
 }
 
 /* fine stili specifici pagina 3 *******************************************************************************/
