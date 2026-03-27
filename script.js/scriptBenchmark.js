@@ -83,7 +83,7 @@ const startBlink = () => {
       clearInterval(blink)
       return
     } 
-    if(seconds <= timeQuestion/2){
+    if(seconds <= timeQuestion/3){
       display.classList.toggle("blink") 
     } else {
       display.classList.remove('blink')
