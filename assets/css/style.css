@@ -430,3 +430,8 @@ button {
 .display-none {
   display: none !important;
 }
+
+.blink{
+  color: red !important;
+  opacity: 50% !important;
+}

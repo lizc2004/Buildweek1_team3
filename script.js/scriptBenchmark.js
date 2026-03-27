@@ -39,8 +39,6 @@ const nextBtn = document.getElementById("nextBtn");
 
 let currentQuestionIndex = 0;
 
-
-
 const showQuestion= ()=>{
     answersContainer.innerHTML= ""                                         //azzera le answers
     nextBtn.style.display = "none"                                         //toglie il bottone avanti per ogni Question nuova
@@ -72,6 +70,29 @@ const startQuiz = () => {
     resetTimer()
 }
 
+// Timer che lampeggia
+
+let blink
+
+const startBlink = () => {
+  clearInterval(blink)
+  display.classList.remove("blink")
+  blink = setInterval(function () {
+    if (seconds <= 0) {
+      display.classList.remove("blink")
+      clearInterval(blink)
+      return
+    } 
+    if(seconds <= timeQuestion/2){
+      display.classList.toggle("blink") 
+    } else {
+      display.classList.remove('blink')
+    }
+  }, 500); //Velocità blink
+};
+
+startBlink()
+
 const welcomePage = document.getElementById('welcome')
 const benchmarkPage = document.getElementById('benchmark')
 const resultPage = document.getElementById('results')
@@ -91,6 +112,7 @@ btnProceed.addEventListener('click',()=>{
 //Gestisce il tasto avanti tra una domanda e l'altra
 
 nextBtn.addEventListener('click', ()=>{
+  stopTimer()
     const selectedButton= answersContainer.querySelector('.btn.selected')
     if(selectedButton){
         const result = selectedButton.dataset.isCorrect === 'true'
@@ -100,6 +122,8 @@ nextBtn.addEventListener('click', ()=>{
          if (currentQuestionIndex < databaseQuestions.length){
              showQuestion()
              resetTimer()
+             startBlink()
+             timer()
          } else {                                              //Con questo else verranno mostrati i risultati
             mostraPaginaRisultati()
             benchmarkPage.classList.add('display-none')
@@ -107,42 +131,38 @@ nextBtn.addEventListener('click', ()=>{
 }
 })
 
-// Timer che lampeggia
-
-let blink=0
-
-const startBlink = () => {
-  blink = setInterval(function () {
-    if (seconds <= timeQuestion / 2 && seconds > 0) {
-      display.classList.toggle("blink");
-    } else {
-      display.classList.remove("blink");
-      clearInterval(blink);
-    }
-  }, 500); //Velocità blink
-};
-
 //Gestisce e fa partire il Timer
 
+let countdown
+
+const stopTimer= ()=>{
+  clearInterval(countdown)
+  clearInterval(blink)
+}
+
 const timer = () => {
-  startBlink();
-  const countdown = setInterval(function () {
-    //Esegue un blocco di codice ogni secondo
+  stopTimer()
+  startBlink()
+  countdown = setInterval(function () {
     if (seconds > 0) {
       seconds--;
       display.innerText = seconds;
       ring();
       aggiornaColoreTimer(); // QUI
     } else {
-      display.classList.remove("blink-red");
-      clearInterval(countdown);
-      clearInterval(blink);
-      display.classList.remove("blink");
+      stopTimer()
       examResults.push(false);
       currentQuestionIndex++;
-      showQuestion();
-      resetTimer();
-      timer();
+      if(currentQuestionIndex < databaseQuestions.length) {
+        showQuestion()
+        resetTimer()
+        startBlink()
+        timer()
+      } else {
+        benchmarkPage.classList.add('display-none')
+        resultPage.classList.remove('display-none')
+        mostraPaginaRisultati()
+      }
     }
   }, 1000);
 };
