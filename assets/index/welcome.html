@@ -64,7 +64,10 @@
           <div id="answers"></div>
 
           <button id="nextBtn" class="buttonLightBlue">Avanti</button>
-          <h2>Question <span id="indice">1</span>/10</h2>
+          <h2>
+            <span class="white">Question <span id="indice">1</span></span
+            >/10
+          </h2>
         </article>
       </section>
 
@@ -75,8 +78,7 @@
 
         <div class="results-container">
           <div class="stat-box">
-            <h1>Corrette</h1>
-            <h1 id="percentuale-corrette"><b>0% </b></h1>
+            <h2 id="percentuale-corrette">0%</h2>
             <p id="testo-corrette">0/0 questions</p>
           </div>
           <div class="chart">
@@ -89,39 +91,33 @@
               </p>
             </div>
           </div>
-
           <div class="stat-box">
-            <h1>Errate</h1>
-            <h1 id="percentuale-sbagliate"><b> 0% </b></h1>
+            <h2 id="percentuale-sbagliate">0%</h2>
             <p id="testo-sbagliate">0/0 questions</p>
           </div>
         </div>
-        <!--<div class="controls">
-          <button onclick="testEsame(true)">Simula Promosso (80%)</button>
-          <button onclick="testEsame(false)">Simula Bocciato (40%)</button>
-        </div> -->
 
-        <button id="rate">RATE US</button>
+        <button>RATE US</button>
       </section>
       <!-- PAGINA 4: Feedback -->
-      <section id="feedback" class="display-none">
+      <section id="feedback">
         <h1>Tell us how it's going</h1>
         <p>
-          On a scale from 1 to 10, how likely are you to recommend EPICODE to a
-          friend or colleague?
+          From 0 to 10, how likely are you to recommend EPICODE to a friend or a
+          colleague?
         </p>
 
-        <div id="stelle">
-          <button class="stella" data-voto="1" type="button">&#9733;</button>
-          <button class="stella" data-voto="2" type="button">&#9733;</button>
-          <button class="stella" data-voto="3" type="button">&#9733;</button>
-          <button class="stella" data-voto="4" type="button">&#9733;</button>
-          <button class="stella" data-voto="5" type="button">&#9733;</button>
-          <button class="stella" data-voto="6" type="button">&#9733;</button>
-          <button class="stella" data-voto="7" type="button">&#9733;</button>
-          <button class="stella" data-voto="8" type="button">&#9733;</button>
-          <button class="stella" data-voto="9" type="button">&#9733;</button>
-          <button class="stella" data-voto="10" type="button">&#9733;</button>
+        <div class="stars">
+          <button class="stella" data-voto="1">&#9733;</button>
+          <button class="stella" data-voto="2">&#9733;</button>
+          <button class="stella" data-voto="3">&#9733;</button>
+          <button class="stella" data-voto="4">&#9733;</button>
+          <button class="stella" data-voto="5">&#9733;</button>
+          <button class="stella" data-voto="6">&#9733;</button>
+          <button class="stella" data-voto="7">&#9733;</button>
+          <button class="stella" data-voto="8">&#9733;</button>
+          <button class="stella" data-voto="9">&#9733;</button>
+          <button class="stella" data-voto="10">&#9733;</button>
         </div>
 
         <p>Leave us an open feedback about your experience so far</p>
