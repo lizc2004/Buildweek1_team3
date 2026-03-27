@@ -1,12 +1,24 @@
 const timeQuestion = 30;
 let seconds = timeQuestion;
-let circle = 565; //Lunghezza circle che dovrà animarsi//
+let circle = 565; // Lunghezza circle che dovra animarsi
 let display = document.getElementById("display");
 
 const ring = () => {
   let animationCircle = circle - (seconds * circle) / 30;
   document.getElementById("second-circle").style.strokeDashoffset =
     animationCircle;
+};
+
+const aggiornaColoreTimer = () => {
+  const secondoCerchio = document.getElementById("second-circle");
+
+  if (seconds > 20) {
+    secondoCerchio.style.stroke = "#00ffff";
+  } else if (seconds > 10) {
+    secondoCerchio.style.stroke = "#c2128d";
+  } else {
+    secondoCerchio.style.stroke = "#ff3b30";
+  }
 };
 
 const examResults = [];
@@ -16,7 +28,9 @@ const resetTimer = () => {
   seconds = 30;
   display.innerText = 30;
   ring();
+  aggiornaColoreTimer();
 };
+
 
 const questionElement = document.querySelector("#question h1");
 const answersContainer = document.getElementById("answers");
@@ -118,6 +132,7 @@ const timer = () => {
       seconds--;
       display.innerText = seconds;
       ring();
+      aggiornaColoreTimer(); // QUI
     } else {
       display.classList.remove("blink-red");
       clearInterval(countdown);
@@ -129,6 +144,5 @@ const timer = () => {
       resetTimer();
       timer();
     }
-  }, 1000); //Set interval funziona con i milliseconds, da specificare quindi che l'azione va compita ogni secondo
+  }, 1000);
 };
-
