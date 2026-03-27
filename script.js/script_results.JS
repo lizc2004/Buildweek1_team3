@@ -41,31 +41,58 @@ function aggiornaGrafico(dati) {
   console.log("Grafico aggiornato con gradiente:", gradiente);
 }
 
-// funzione 4: messaggio centrale
+//funzione prova lancio coriandoli
+function lanciaCoriandoli() {
+  for (let i = 0; i < 120; i++) {
+    const confetto = document.createElement("div");
+    confetto.classList.add("confetto");
 
-function mostraMessaggioCentrale(dati) {
-    const contenitore = document.getElementById('messaggio-risultato')
-    if (dati.percentualeC >= 60) {
-        contenitore.innerHTML = `
-            <p class="testo-bold">Congratulazioni</p>
-            <p class="testo-cyan">Hai superato l'esame</p>
-            <p class="testo-small">
-                Ti invieremo il certificato tra pochi minuti. 
-                Controlla la tua email
-            </p>
-        `
-    } else {
-        contenitore.innerHTML = `
-            <p class="testo-bold">Oops!</p>
-            <p class="testo-magenta">Non hai superato l'esame</p>
-            <p class="testo-small">
-                Non preoccuparti! Puoi riprovare per migliorare il tuo 
-                punteggio e ottenere il tuo certificato
-            </p>
-        `;
+    confetto.style.left = Math.random() * 100 + "vw";
+    confetto.style.animationDelay = Math.random() * 2 + "s";
+    confetto.style.backgroundColor = ["#00ffff", "#c2128d", "#ffffff", "#ffd700"][
+      Math.floor(Math.random() * 4)
+    ];
+
+    document.body.appendChild(confetto);
+
+    setTimeout(() => {
+      confetto.remove();
+    }, 4000);
   }
 }
 
+// funzione 4: messaggio centrale
+
+function mostraMessaggioCentrale(dati) {
+  // seleziona il contenitore centrale del messaggio
+  const contenitore = document.getElementById("messaggio-risultato");
+
+  // se la percentuale delle risposte corrette e almeno 60
+  if (dati.percentualeC >= 60) {
+    // mostra il messaggio di promozione
+    contenitore.innerHTML = `
+      <p class="testo-bold">Congratulazioni</p>
+      <p class="testo-cyan">Hai superato l'esame</p>
+      <p class="testo-small">
+        Ti invieremo il certificato tra pochi minuti. 
+        Controlla la tua email
+      </p>
+    `;
+
+    // lancia i coriandoli solo in caso di esame superato
+    lanciaCoriandoli();
+  } else {
+    // altrimenti mostra il messaggio di bocciatura
+    contenitore.innerHTML = `
+      <p class="testo-bold">Oops!</p>
+      <p class="testo-magenta">Non hai superato l'esame</p>
+      <p class="testo-small">
+        Non preoccuparti! Puoi riprovare per migliorare il tuo 
+        punteggio e ottenere il tuo certificato
+      </p>
+    `;
+  }
+}
 // funzione 5: aggiorna la pagina dei risultati
 
 function mostraPaginaRisultati() {

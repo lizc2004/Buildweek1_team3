@@ -64,13 +64,16 @@
           <div id="answers"></div>
 
           <button id="nextBtn" class="buttonLightBlue">Avanti</button>
-          <h2>Question <span id="indice">1</span>/10</h2>
+          <h2>
+            <span class="white">Question <span id="indice">1</span></span
+            >/10
+          </h2>
         </article>
       </section>
 
       <!-- PAGINA 3: Results -->
       <section id="results" class="display-none">
-        <h1>Results</h1>
+        <h1 class="titolo"><b>Results </b></h1>
         <p>The summary of your answers:</p>
 
         <div class="results-container">
@@ -81,7 +84,11 @@
           <div class="chart">
             <div id="donut-chart"></div>
             <div id="messaggio-risultato">
-              <p></p>
+              <p>Congratulations! You passed the exam</p>
+              <p>
+                We'll send you the certificate in few minutes. Check your email
+                (including promotions/span folder)
+              </p>
             </div>
           </div>
           <div class="stat-box">
@@ -90,10 +97,10 @@
           </div>
         </div>
 
-        <button id="rate">RATE US</button>
+        <button>RATE US</button>
       </section>
       <!-- PAGINA 4: Feedback -->
-      <section id="feedback" class="display-none">
+      <section id="feedback">
         <h1>Tell us how it's going</h1>
         <p>
           From 0 to 10, how likely are you to recommend EPICODE to a friend or a
@@ -120,7 +127,6 @@
         ></textarea>
 
         <div class="controls">
-          <button id="btn-feedback" type="button">Submit Feedback</button>
           <button id="btn-info" class="buttonLightBlue" type="button">
             MORE INFO
           </button>
