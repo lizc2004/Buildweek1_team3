@@ -98,9 +98,27 @@
         </div>
 
         <button id="rate">RATE US</button>
+
+        <section id="chatbot-support" class="display-none">
+          <h2>Study Support Chatbot</h2>
+          <p>
+            Se non hai superato il benchmark, puoi usare questo tutor AI per
+            capire meglio gli errori e prepararti al prossimo tentativo.
+          </p>
+          <div id="chatbot-messages" aria-live="polite"></div>
+          <p id="chatbot-status"></p>
+          <form id="chatbot-form">
+            <textarea
+              id="chatbot-input"
+              rows="3"
+              placeholder="Esempio: mi spieghi l'argomento delle domande che ho sbagliato?"
+            ></textarea>
+            <button type="submit" class="buttonLightBlue">CHIEDI AIUTO</button>
+          </form>
+        </section>
       </section>
       <!-- PAGINA 4: Feedback -->
-      <section id="feedback">
+      <section id="feedback" class="display-none">
         <h1>Tell us how it's going</h1>
         <p>
           From 0 to 10, how likely are you to recommend EPICODE to a friend or a
@@ -136,6 +154,7 @@
     <script src="../../script.js/scriptQuestions.js"></script>
     <script src="../../script.js/scriptBenchmark.js"></script>
     <script src="../../script.js/script_results.JS"></script>
+    <script src="../../script.js/script_chatbot.js"></script>
     <script src="../../script.js/script_feedback.js"></script>
   </body>
 </html>

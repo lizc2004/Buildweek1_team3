@@ -22,6 +22,7 @@ const aggiornaColoreTimer = () => {
 };
 
 const examResults = [];
+const examAnswersDetails = [];
 
 const resetTimer = () => {
   // il timer torna a 30
@@ -65,6 +66,8 @@ const showQuestion= ()=>{
 };
 
 const startQuiz = () => {
+    examResults.length = 0
+    examAnswersDetails.length = 0
     currentQuestionIndex = 0
     showQuestion()
     resetTimer()
@@ -115,8 +118,16 @@ nextBtn.addEventListener('click', ()=>{
   stopTimer()
     const selectedButton= answersContainer.querySelector('.btn.selected')
     if(selectedButton){
+        const currentQuestion = databaseQuestions[currentQuestionIndex]
         const result = selectedButton.dataset.isCorrect === 'true'
         examResults.push(result)
+        examAnswersDetails.push({
+          questionIndex: currentQuestionIndex,
+          question: currentQuestion.question,
+          selectedAnswer: selectedButton.innerText,
+          correctAnswer: currentQuestion.answers.find((answer) => answer.correct)?.text || "",
+          isCorrect: result,
+        })
     }
              currentQuestionIndex++
          if (currentQuestionIndex < databaseQuestions.length){
@@ -151,7 +162,15 @@ const timer = () => {
       aggiornaColoreTimer(); // QUI
     } else {
       stopTimer()
+      const currentQuestion = databaseQuestions[currentQuestionIndex]
       examResults.push(false);
+      examAnswersDetails.push({
+        questionIndex: currentQuestionIndex,
+        question: currentQuestion.question,
+        selectedAnswer: "Nessuna risposta selezionata",
+        correctAnswer: currentQuestion.answers.find((answer) => answer.correct)?.text || "",
+        isCorrect: false,
+      })
       currentQuestionIndex++;
       if(currentQuestionIndex < databaseQuestions.length) {
         showQuestion()

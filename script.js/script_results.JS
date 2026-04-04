@@ -100,6 +100,7 @@ function mostraPaginaRisultati() {
     aggiornaTestiHtml(datiFinali)
     aggiornaGrafico(datiFinali)
     mostraMessaggioCentrale(datiFinali)
+    showChatbotForFailedExam(datiFinali)
 
     console.log("Pagina risultati generata con successo!", datiFinali)
 }
