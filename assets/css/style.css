@@ -212,9 +212,9 @@ circle {
 }
 
 #nextBtn {
-  position: absolute;
+  position: relative;
   bottom: 30%;
-  left: 50%;
+  left: 7%;
   transform: translate(-50%);
   margin-top: 0;
   z-index: 20;
@@ -502,11 +502,16 @@ circle {
   margin-top: 20px;
 }
 
-button {
+a {
   margin-top: 20px;
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
+  display : flex;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
 }
 
 /* fine stili specifici pagina 4 *******************************************************************************/
